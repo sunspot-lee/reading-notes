@@ -636,7 +636,7 @@ $$
 
 39. $E[X] = 10 \times 3.5 = 35$，$var(X) = 10 \frac{5 \times 7}{12} = 29.17$
 
-40.  参考标准答案
+40. 参考标准答案
 
 41. a. 二项随机变量，$E[X] = np = 50 \times 5 \times 0.02 = 5$，$p_X(5) = \binom{250}{5}0.02^5(1-0.02)^{245} = 0.1772$
     b. $\lambda = np = 5$，$p_X(5) = e^{-\lambda} \frac{\lambda^5}{5!} = 0.1755$
@@ -731,3 +731,46 @@ $$
 3. 参考书上的答案
 
 4. 参考书上的答案
+
+### 3.2 分布函数
+
+随机变量X的分布函数(CDF)是：
+$$
+F_X(x) = P(X \le x) = \begin{cases} \sum_{k \le x} p_X(k), & \text{若X是离散的} \\ \int_{-\infty}^x f_X(t) dt, & \text{若X是连续的} \end{cases}
+$$
+CDF又称**累积分布函数**，有下列性质：
+
+* $F_X(x)$是x的单调增函数
+* 当$x \rightarrow -\infty$，$F_X(x) \rightarrow 0$，当$x \rightarrow \infty$，$F_X(x) \rightarrow 1$
+* 当X是离散随机变量时，$F_X(x)$是阶梯函数
+* 当X是连续随机变量时，$F_X(x)$是连续函数
+
+几何随机变量的CDF：
+$$
+F_{geo}(n) = 1-(1-p)^n
+$$
+指数随机变量的CDF：
+$$
+F_{exp}(x) = 1-e^{-\lambda x}
+$$
+令$\delta = -\ln(1-p) / \lambda$，这样，在$x=n \delta$处，几何随机变量和指数随机变量的CDF相等
+
+#### 习题
+
+5. 令$Y=h-X$，$F_Y(y) = P(Y \le y) = \frac{y^2}{h^2}, 0 \le y \le h$
+   $f_Y(y) = \frac{d}{dy} F_Y(y) = \frac{2y}{h^2}$
+   $f_X(x) = P_Y(h-x) = \frac{2(h-x)}{h^2}$
+   $F_X(x) = \int_0^x f_X(x) = \frac{2x}{h} - \frac{x^2}{h^2}$
+
+6. CDF：$F_X(x) = \frac12 P(X \le x | Y=0) + \frac12 P(X \le x | Y=1) = \frac12(2-e^{-\lambda x})$
+
+7. a. $f_X(x) = \frac{d}{dx}F_X(x) = \frac{d}{dx} \frac{x^2}{r^2} = \frac{2x}{r^2}, 0 \le x \le r$
+   $E[X] = \frac23 r$，$var(X) = \frac12 r^2 - (\frac23 r)^2 = \frac{r^2}{18}$
+   b. $F_S(s) = \begin{cases} 1-\frac{1}{r^2s^2}, & s > \frac1t \\ 1-\frac{t^2}{r^2}, & 0 \le s < \frac1t \end{cases}$
+
+8. a. $F_X(x) = P(X<x) = p P(Y<x) + (1-p) P(Z<x)$，所以$f_X(x) = \frac{d}{dx} F_X(x) = p f_Y(x) + (1-p) f_Z(x)$
+   b. $F_X(x) = \begin{cases} p e^{\lambda x}, & x < 0 \\ 1 - (1-p)e^{-\lambda x}, & x \ge 0 \end{cases}$
+
+9. 参考书上的答案
+
+10. 参考书上的答案
