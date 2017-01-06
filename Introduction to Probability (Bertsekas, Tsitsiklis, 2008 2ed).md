@@ -645,7 +645,89 @@ $$
     $var(Y) = 0.01 \times 10^2 + 0.006 \times 20^2 + 0.004 \times 50^2 - 0.42^2 = 13.22$，$250 \cdot var(Y) = 3305$
     d. $(p-0.02)^2 < \frac{25 p(1-p)}{250} \Rightarrow 0.002924<p<0.1243$
 
-42.  ​
+42. a. $E[X_i]=S$，$E[S_n]=\frac1n n S=S$，$var(S_n)=\frac1{n^2} n var(X_i)=\frac1n var(X_i) \rightarrow 0$
+    b. $S_n = (1-\frac1n)S_{n-1} + \frac1n X_n$
+    c. 略
+    d. 略
+
+43. 参考书上的答案
+
+44. 参考书上的答案
+
+45. 参考书上的答案
+
+46. 参考书上的答案
 
 ### 2.8 小节和讨论
 
+## 3 一般随机变量
+
+### 3.1 连续随机变量和概率密度函数
+
+对于随机变量X，若存在一个非负函数$f_X$，使得$P(X \in B) = \int_B f_X(x) dx$对每一个实数轴上的集合B都成立，则称X为**连续随机变量**，函数$f_X$为X的**概率密度函数**(PDF)。
+
+#### 3.1.1 期望
+
+X的**期望**：$E[X] = \int_{-\infty}^\infty x f_X(x) dx$，要求：$\int_{-\infty}^\infty x f_X(x) dx < \infty$
+
+g(X)的期望：$E[g(X)] = \int_{-\infty}^\infty g(x) f_X(x) dx$
+
+X的**n阶矩**：$E[X^n]$
+
+X的**方差**：$var(X) = E[(X-E[X])^2] = E[X^2] - (E[X])^2$
+
+设$Y=aX+b$，则：$E[Y] = a E[X] + b$，$var(Y) = a^2 var(X)$
+
+**均匀随机变量**
+$$
+\begin{align} f_X(x) &= \begin{cases} \frac1{b-a}, & a \le x \le b \\ 0, & else \end{cases} \\
+E[X] &= \frac{a+b}2 \\
+var(X) &= \frac{(b-a)^2}{12} \end{align}
+$$
+
+#### 3.1.2 指数随机变量
+
+指数随机变量的PMF：
+$$
+f_X(x) = \begin{cases} \lambda e^{-\lambda x}, & x \ge 0 \\ 0, & else \end{cases}
+$$
+其中$\lambda$是分布参数，可看作单位时间内事件发生的概率，$\lambda>0$。
+
+指数分布有特性$P(X \ge a) = e^{-\lambda a}$
+
+**指数随机变量类似几何随机变量**，可以看作事件第一次发生的时间。
+
+均值和方差：
+$$
+\begin{align} E[X] &= \frac1{\lambda} \\
+var(X) &= \frac1{\lambda^2} \end{align}
+$$
+
+#### 习题
+
+1. PMF
+   $$
+   p_Y(y) = \begin{cases} \frac13, & y=1 \\ \frac23, & y=2 \end{cases} \\
+   E[Y] = \frac53
+   $$
+
+2. 验证
+   $$
+   \begin{align} \int_{-\infty}^\infty f_X(x) dx &= \int_{-\infty}^\infty \frac{\lambda}{2}e^{-\lambda |x|} dx \\
+   &= \int_{-\infty}^0 \frac{\lambda}{2}e^{\lambda x} dx + \int_0^{\infty} \frac{\lambda}{2}e^{-\lambda x} dx \\
+   &= \left. \frac12 e^{\lambda x} \right|_{-\infty}^0 - \left. \frac12 e^{-\lambda x} \right|_0^{\infty} \\
+   &= 1 \end{align}
+   $$
+   均值：$f_X(-x) = f_X(x)$，所以$E[X]=0$
+   方差：
+   $$
+   \begin{align} var(X) &= E[X^2] - (E[X])^2 \\ &= E[X^2] \\ &= \int_{-\infty}^\infty x^2 \frac{\lambda}2 e^{-\lambda |x|} dx \\
+   &= \lambda \int_0^\infty x^2 e^{-\lambda x} dx \\
+   &= \int_0^\infty 2x e^{-\lambda x} dx - \left. x^2 e^{-\lambda x} \right|_0^\infty \\
+   &= \left.  -\frac2{\lambda^2} e^{-\lambda x}(1+\lambda x) - x^2 e^{-\lambda x} \right|_0^\infty \\
+   &= \frac2{\lambda^2}\end{align}
+   $$
+
+3. 参考书上的答案
+
+4. 参考书上的答案
