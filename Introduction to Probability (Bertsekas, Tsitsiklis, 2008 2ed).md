@@ -844,3 +844,20 @@ $$
 
 #### 习题
 
+18. a. $E[X] = \int_1^3 x f_X(x) dx = \left. \frac{x^3}{12} \right|_1^3 = \frac{13}{6}$，$P(A) = \int_2^3 f_X(x) dx = \frac58$，$E[X|A] = \frac{\int_2^3 \frac{x^2}{4} dx}{P(A)} = \frac{38}{15}$
+    b. $E[Y] = \int_1^3 x^2 f_X(x) dx = 5$，$E[Y^2] = \int_1^3 x^4 f_X(x) dx = \frac{91)3$，$var(Y) = E[Y^2] - (E[Y})^2 = \frac{16}3$
+
+19. 中文版翻译错误。
+    a. $\int_1^2 f_X(x) dx = 1 \Rightarrow \left. -\frac{c}{x} \right|_1^2 = 1 \Rightarrow c = 2$
+    b. $P(A) = \int_{1.5}^2 2x^{-2} dx = \frac13$，$f_{X|A}(x) = \frac{2x^{-2}}{\frac13} = 6x^{-2}, 1.5 < x \le 2$
+    c. $E[Y|A] = \frac{\int_{1.5}^2 2 dx}{\frac13} = 3$，$E[Y^2|A] = 3\int_{1.5}^2 2x^2 dx = 9.25$，$var(Y) = 9.25-3^2=0.25$
+
+20. $P(A<5)(5 + E[B]) + P(A \ge 5)(E[A+B]) = (1-e^{-5/30})(5+30)+e^{-5/30}(35+30) = 60.3945$
+
+21. 中文版翻译错误。
+    a. $f_{X,Y}(x,y) = f_Y(y) f_{X|Y}(x|y) = \frac1l \frac1y = \frac1{ly}$
+    b. $f_X(x) = \int_x^l f_{X,Y}(x,y) dy = \frac1l \ln(l/x)$
+    c. $E[X] = \int_0^l x f_X(x) dx = \frac{l}4$
+    d. $E[X] = E[Y]E[X/Y] = \frac{l}2 \cdot \frac12 = \frac{l}4$
+
+22. ​
