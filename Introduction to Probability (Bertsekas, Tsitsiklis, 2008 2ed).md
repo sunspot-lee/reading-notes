@@ -845,7 +845,7 @@ $$
 #### 习题
 
 18. a. $E[X] = \int_1^3 x f_X(x) dx = \left. \frac{x^3}{12} \right|_1^3 = \frac{13}{6}$，$P(A) = \int_2^3 f_X(x) dx = \frac58$，$E[X|A] = \frac{\int_2^3 \frac{x^2}{4} dx}{P(A)} = \frac{38}{15}$
-    b. $E[Y] = \int_1^3 x^2 f_X(x) dx = 5$，$E[Y^2] = \int_1^3 x^4 f_X(x) dx = \frac{91)3$，$var(Y) = E[Y^2] - (E[Y})^2 = \frac{16}3$
+    b. $E[Y] = \int_1^3 x^2 f_X(x) dx = 5$，$E[Y^2] = \int_1^3 x^4 f_X(x) dx = \frac{91}3$，$var(Y) = E[Y^2] - (E[Y])^2 = \frac{16}3$
 
 19. 中文版翻译错误。
     a. $\int_1^2 f_X(x) dx = 1 \Rightarrow \left. -\frac{c}{x} \right|_1^2 = 1 \Rightarrow c = 2$
@@ -860,4 +860,78 @@ $$
     c. $E[X] = \int_0^l x f_X(x) dx = \frac{l}4$
     d. $E[X] = E[Y]E[X/Y] = \frac{l}2 \cdot \frac12 = \frac{l}4$
 
-22. ​
+22. i. 设两个点的座标为X和Y：
+    $P(\text{可以组成三角形})=2P(X<\frac12 \cap Y>\frac12)P(Y-X<\frac12 | X<\frac12 \cap Y>\frac12) = 2 \frac12 \frac12 \frac12 = \frac14$
+    ii. 设第一点座标为X，第二点座标为Y：
+    $P(\text{可以组成三角形})=P_X(x<\frac12)P_{Y|X}(\frac12<y<x+\frac12 | x<\frac12) = \int_0^{\frac12}\int_{\frac12}^{x+\frac12} \frac1{1-x} dy dx = \ln2-\frac12$
+    iii. 概率是ii的2倍，是$2\ln 2 - 1$
+
+23. a. $f_{X,Y}(x,y) = 2$
+    b. $f_Y(y) = \int_0^{1-y} f_{X,Y}(x,y) dx = 2(1-y)$
+    c. $f_{X|Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} = \frac1{1-y}$
+    d. $E[X|Y=y] = \frac{1-y}{2}$，$E[X] = \int_0^1 f_Y(y) E[X|Y] dy = \frac{1-E[Y]}2$
+    e. $E[X] = E[Y] = \frac{1-E[X]}{2} \Rightarrow E[X] = \frac13$
+
+24. 解：
+    $$
+    \begin{align}
+    E[X|Y] &= \frac12 - \frac{y}4 \\
+    E[X] &= \int_0^2 f_Y(y) E[X|Y] dy = \frac12 - \frac{E[Y]}4 \\
+    E[Y|X] &= 1-x \\
+    E[Y] &= \int_0^1 f_X(x) E[Y|X] dx = 1 - E[X] \\
+    E[X] &= \frac13 \\
+    E[Y] &= \frac23
+    \end{align}
+    $$
+
+25. 解：
+    $$
+    \begin{align}
+    f_{X,Y}(x,y) &= \frac1{2\pi\sigma^2} e^{-(x^2+y^2)/(2\sigma^2)} \\
+    P(R>c) &= \int_0^{2\pi}\int_c^\infty f_{R,\Theta}(r,\theta) rdrd\theta = e^{-\frac{c^2}{2\sigma^2}} \\
+    f_{X,Y|R>c}(x,y) &= \frac{f_{X,Y}(x,y)}{P(R>c)} = \frac1{2\pi\sigma^2} e^{-(x^2+y^2-c^2)/(2\sigma^2)}
+    \end{align}
+    $$
+
+26. 书上的答案有疑问
+
+27. 略
+
+28. 参考书上的答案
+
+29. 参考书上的答案
+
+30. 参考书上的答案
+
+31. 参考书上的答案
+
+32. 参考书上的答案
+
+33. 参考书上的答案
+
+### 3.6 连续贝叶斯准则
+
+假设连续随机变量X会影响连续随机变量Y，已知X的PDF是$f_X(x)$，已知X=x时Y的PDF是$f_{Y|X}(y|x)$，有：
+$$
+f_{X|Y}(x|y) = \frac{f_X(x) f_{Y|X}(y|x)}{f_Y(y)} = \frac{f_X(x) f_{Y|X}(y|x)}{\int_{-\infty}^\infty f_X(t) f_{Y|X}(y|t) dt}
+$$
+
+#### 3.6.1 关于离散随机变量的推断
+
+假设离散随机变量N会影响连续随机变量Y，已知N的PMF是$p_N(n)$，已知N=n时Y的PDF是$f_{Y|N}(y|n)$，有：
+$$
+P(N=n|Y=y) = \frac{p_N(n) f_{Y|N}(y|n)}{f_Y(y)} = \frac{p_N(n) f_{Y|N}(y|n)}{\sum_i p_N(i) f_{Y|N}(y|i)}
+$$
+
+#### 3.6.2 基于离散观察值的推断
+
+#### 习题
+
+34. a. $E[P] = \int_0^1 p f_P(p) dp = e-2$
+    b. $f_{P|A}(p) = \frac{f_P(p) P(A|P=p)}{P(A)} = \frac{p^2 e^p}{e-2}$
+    c. $E[P|A] = \int_0^1 f_{P|A}(p) P(P|P=p,A) dp = 0.786$
+
+35. 参考书上的答案
+
+### 3.7 小节和讨论
+
