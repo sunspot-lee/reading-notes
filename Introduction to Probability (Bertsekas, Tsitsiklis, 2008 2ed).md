@@ -890,3 +890,73 @@ $$
 | X     | $p_X(x) = \sum_y p_{X,Y}(x,y) = \sum_y p_Y(y) p_{X \vert Y}(x \vert y)$ | $E[g(X)] = \sum_x g(x) p_X(x) = \sum_y p_Y(y) E[g(X) \vert Y]$ |
 | (X,Y) | $p_{X,Y}(x,y) = P(X=x,Y=y) = p_Y(y) p_{X \vert Y}(x \vert y)$ | $E[g(X,Y)] = \sum_{(x,y)} g(x,y) p_{X,Y}(x,y)$ |
 | X\|Y  | $p_{X \vert Y}(x \vert y) = P(X=x \vert Y=y) = \frac{p_{X,Y}(x,y)}{p_Y(y)}$ | $E[X \vert Y] = \sum_x x p_{X \vert Y}(x \vert y)$ |
+
+## 4 随机变量的深入内容
+
+### 4.1 随机变量函数的分布密度函数
+
+**连续随机变量X的函数$Y=g(X)$的分布密度函数**：
+$$
+F_Y(y) = P(g(X) \le y) = \int_{\{x|g(x) \le y\}} f_X(x) dx \\ f_Y(y) = \frac{dF_Y(y)}{dy}
+$$
+如果$Y=aX+b$，则：
+$$
+f_Y(y) = \frac1{|a|} f_X(\frac{y-b}{a})
+$$
+如果$g(x)$严格单调并可微，则存在逆函数$h(y)$
+$$
+f_Y(y) = f_X(h(y)) \left| \frac{dh(y)}{dy} \right|
+$$
+如果$Z=X+Y$，当X和Y是独立的离散随机变量时：
+$$
+p_Z(z) = \sum_x p_X(x) p_Y(z-x)
+$$
+当X和Y是独立的连续随机变量时：
+$$
+f_Z(z) = \int_{-\infty}^\infty f_X(x) f_Y(z-x) dx
+$$
+如果X和Y是独立的正态随机变量，则X+Y也是正态随机变量，且均值为$\mu_x+\mu_y​$，方差为$\sigma_x^2+\sigma_y^2​$。
+
+#### 习题
+
+1. $f_X(x)=\frac12$，令$Y=\sqrt{|X|}$，有：
+   $$
+   F_Y(y) = P(\sqrt{|X|} \le y) = P(-y^2 \le X \le y^2) = \frac12 \cdot 2y^2 = y^2, \quad 0 \le y \le 1 \\
+   f_Y(y) = \begin{cases} 2y, & 0 \le y \le 1 \\ 0, & \text{else}\end{cases}
+   $$
+   令$Z=-\ln{|X|}$，有：
+   $$
+   F_Z(z) = P(-\ln{|X|} \le z) = P(X \le -e^{-z} \cup e^{-z} \le X) = 1-1e^{-z}, \quad z \ge 0 \\
+   f_Z(z) = \begin{cases} e^{-z}, & z \ge 0 \\ 0, & \text{else} \end{cases}
+   $$
+
+2. 令$Y=e^X$，有$f_Y(y) = f_X(\ln{y}) \frac1y, y>0$，当X是[0,1]之间的均匀分布时，$f_Y(y) = \frac1y, 1 \le y \le e$
+
+3. $F_Y(y) = P(|X|^{1/3} \le y) = P(-y^3 \le X \le y^3) = F_X(y^3) - F_X(-y^3)$，所以$f_Y(y) = 3y^2(f_X(y^3)+f_X(-y^3)), y \ge 0$
+   $F_Y(y) = P(|X|^{1/4} \le y) = P(-y^4 \le X \le y^4) = F_X(y^4) - F_X(-y^4)$，所以$f_Y(y) = 4y^3(f_X(y^4)+f_X(-y^4)), y \ge 0$
+
+4. 当$y \le 5$时，$F_Y(y) = P(5-y \le X \le 5 \cup 20-y \le X \le 20) = F_X(5)-F_X(5-y)+F_X(20)-F_X(20-y)$
+   当$5 \le y \le 15$时，$F_Y(y) = P(20-y \le X \le 20) = F_X(20)-F_X(20-y)$，所以：
+   $$
+   f_Y(y) = \begin{cases} f_X(5-y)+f_X(20-y), & 0 \le y \le 5 \\ f_X(20-y), & 5 \le y \le 15\end{cases}
+   $$
+
+5. 令$Z=|X-Y|$，$F_Z(z)=1-(1-z)^2, 0 \le z \le 1$，$f_Z(z)=2(1-z)$
+
+6. 令$Z=|X-Y|$，$F_Z(z)=z, 0 \le z \le 1$，$f_Z(z)=1$
+
+7. 根据第5题的答案，$E[Z]=\int_0^1 z \cdot 2(1-z) dz = \left. z^2-\frac23z^3 \right|_0^1=\frac13$
+
+8. 解：
+   $$
+   \begin{align}
+   F_Z(z) &= P(X+Y \le z) \\
+   &= \int_0^z P(X=x)(1-P(Y \ge z-x)) dx \\
+   &= \int_0^z \lambda e^{-\lambda x}(1-e^{-\lambda(z-x)}) dx \\
+   &= 1-e^{-\lambda z}-\lambda z e^{-\lambda z} \\
+   f_Z(z) &= \lambda^2 z e^{-\lambda z} \end{align}
+   $$
+
+9. 解：
+
+
