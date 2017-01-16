@@ -958,5 +958,129 @@ $$
    $$
 
 9. 解：
+   $$
+   \begin{align} f_{X-Y}(z) &= \int_{-\infty}^\infty f_X(x) f_Y(x-z) dx \\
+   &= \begin{cases} \int_z^\infty \lambda e^{-\lambda x} \mu e^{-\mu(x-z)} dx, & z \ge 0 \\
+   \int_0^\infty \lambda e^{-\lambda x} \mu e^{-\mu(x-z)} dx, & z<0 \end{cases} \\
+   &= \begin{cases} \frac{\lambda \mu}{\lambda + \mu} e^{-\lambda z}, & z \ge 0 \\
+   \frac{\lambda \mu}{\lambda + \mu} e^{-\mu z}, & z<0 \end{cases} \end{align}
+   $$
+
+10. 解：
+    $$
+    f_{X+Y}(z) = \sum_{x=1}^3 p_X(x) p_Y(z-x) = \frac13 (p_Y(z-1)+p_Y(z-2)+p_Y(z-3)) = \begin{cases} \frac16, & z=1 \\ \frac5{18}, & z=2 \\ \frac13, & z=3 \\ \frac16, & z=4 \\ \frac1{18}, & z=5 \end{cases}
+    $$
+
+11. 证明：
+    $$
+    \begin{align} f_{X+Y}(z) &= \sum_{x=0}^\infty p_X(x) p_Y(z-x) \\
+    &= \sum_{x=0}^z p_X(x) p_Y(z-x) \\
+    &= \sum_{x=0}^z e^{-\lambda}\frac{\lambda^x}{x!} e^{-\mu}\frac{\mu^{z-x}}{(z-x)!} \\
+    &= e^{-(\lambda+\mu)}\frac1{z!} \sum_{x=0}^z \binom{z}{x}\lambda^x \mu^{z-x} \\
+    &= e^{-(\lambda+\mu)}\frac{(\lambda + \mu)^z}{z!} \end{align}
+    $$
+
+12. 参考标准答案
+
+13. 参考标准答案
+
+14. 证明：
+    $$
+    F_Z(z) = P(\min(X,Y) \le z) = 1 - P(X > z \cap Y > z) = 1-P(X > z) P(Y > z) = 1- e^{-\lambda z} e^{-\mu z} \\
+    f_Z(z) = (\lambda + \mu) e^{-(\lambda + \mu)z}
+    $$
+
+15. 参考书上的答案
+
+16. 参考书上的答案
 
 
+### 4.2 协方差和相关
+
+X和Y的**协方差**定义为：$cov(X,Y) = E[(X-E[X])(Y-E[Y])]$。
+
+当$cov(X,Y)=0$时，说X和Y是不相关的。
+$$
+\begin{align} cov(X,Y) &= E[XY] - E[X]E[Y] \\
+cov(X,X) &= var(X) \\
+cov(X,aY+b) &= a \cdot cov(X,Y) \\
+cov(X,Y+Z) &= cov(X,Y) + cov(X,Z) \end{align}
+$$
+X和Y相互独立则X和Y不相关，但是**X和Y不相关不一定X和Y相互独立**。
+
+X和Y的**相关系数**定义为：$\rho(X,Y) = \frac{cov(X,Y)}{\sqrt{var(X)var(Y)}}$。
+
+**随机变量和的方差**：
+$$
+\begin{align} var(X+Y) &= var(X) + var(Y) + 2cov(X,Y) \\
+var(\sum_{i=1}^n X_i) &= \sum_{i=1}^n var(X_i) + \sum_{\{(i,j)|i \ne j\}} cov(X_i,X_j) \end{align}
+$$
+
+#### 习题
+
+17. 证明：
+    $$
+    \begin{align} cov(X+Y,X-Y) &= E[(X+Y)(X-Y)] - E[X+Y]E[X-Y] \\
+    &= E[X^2] - E[Y^2] - (E[X]+E[Y])(E[X]-E[Y]) \\
+    &= var(X) - var(Y) \\
+    &= 0 \end{align}
+    $$
+
+18. 解：
+    $$
+    \begin{align} \rho(R,S) &= \frac{cov(W+X,X+Y)}{\sqrt{var(W+X)var(X+Y)}} \\
+    &= \frac{cov(W,X)+cov(W,Y)+cov(X,X)+cov(X,Y)}{\sqrt{(var(W)+var(X)+2cov(W,X))(var(X)+var(Y)+2cov(X,Y))}} \\
+    &= \frac{var(X)}{2} \\
+    &= \frac12 \\
+    \rho(R,T) &= \frac{cov(W+X,Y+Z)}{\sqrt{var(W+X)var(Y+Z)}} = 0 \end{align}
+    $$
+
+19. 解：
+    $$
+    \begin{align} \rho(X,Y) &= \frac{cov(X,a+bX+cX^2)}{\sqrt{var(X)var(a+bX+cX^2)}} \\
+    &= \frac{b \cdot var(X) + c \cdot cov(X,X^2)}{\sqrt{b^2+2c^2}} \\
+    &= \frac{b}{\sqrt{b^2+2c^2}}\end{align}
+    $$
+
+20. 参考书上的答案
+
+21. 参考书上的答案
+
+### 4.3 再论条件期望和条件方差
+
+依赖于随机变量Y的随机变量X的条件期望$E[X|Y]$也是随机变量
+
+**重期望法则**
+$$
+E[E[X|Y]] = E[X]
+$$
+对任意给定的函数g，有：$E[X g(Y)|Y] = g(Y) E[X|Y]$
+
+给定Y，如果把对X的估计记为$\hat X = E[X|Y]$，**估计误差**就定义为$\tilde X = \hat X - X$，$\hat X$和$\tilde X$不相关，且$var(X)=var(\hat X)+var(\tilde X)$
+
+**条件方差**：$var(X|Y) = E[(X-E[X|Y])^2|Y] = E[\tilde X^2|Y]$
+
+**全方差法则**
+$$
+var(X) = E[var(X|Y)] + var(E[X|Y])
+$$
+
+#### 习题
+
+22. $p(1+2p-1)+(1-p)(1-(2p-1))=(2p-1)^2+1$，经过n次赌博，$((2p-1)^2+1)^n x$
+
+23. a. $P(X \le 1) \cdot 0 + P(X>1) \cdot E[X-1|X>1] = 0.25$
+    b. $P(X \le 1) \cdot 3 + P(X>1) \cdot E[\frac{3-X}2|X>1] = \frac{15}8$
+    c. 设$p=P(X>1.75)=\frac18$，约会次数期望是$\frac1p+\frac1p=\frac2p=16$
+
+24. a. $E[X] = E[E[X|\lambda]] = E[\frac1\lambda] = E[5-y] = 5-2 = 3$
+    b. $E[T] = E[y+X] = 2+3 = 5$
+    c. 参考标准答案
+
+25. 参考书上的答案
+
+26. 参考书上的答案
+
+27. 参考书上的答案
+
+28. 参考书上的答案
