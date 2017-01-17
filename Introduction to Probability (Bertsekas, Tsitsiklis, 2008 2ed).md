@@ -1084,3 +1084,147 @@ $$
 27. 参考书上的答案
 
 28. 参考书上的答案
+
+### 4.4 矩母函数
+
+随机变量X的**矩母函数**是参数s的函数$M_X(s)$
+$$
+M_X(s) = E[e^{sX}]
+$$
+
+矩母函数可用于计算随机变量的矩
+$$
+\left. \frac{d^n}{ds^n}M(s) \right|_{s=0} = E[X^n]
+$$
+
+如果X仅取非负整数，有
+$$
+\lim_{s \rightarrow -\infty} M_X(s) = P(X=0)
+$$
+
+**矩母函数可逆的条件**：如果存在一个正数a，对在区间$[-a,a]$中的任意s，$M_X(s)$都是有限的，则矩母函数$M_X(s)$唯一的决定X的分布函数。
+
+**随机变量的线性函数**
+$$
+M_{aX+b}(s) = e^{sb} M_X(sa)
+$$
+
+**独立随机变量的和**
+$$
+M_{X+Y}(s) = M_X(s) M_Y(s)
+$$
+
+**联合分布随机变量**
+$$
+M_{X_1,X_2}(s_1,s_2) = E[e^{s_1 X_1 + s_2 X_2}]
+$$
+**伯努利分布随机变量**，$k=0,1$
+$$
+p_X(k) = \begin{cases} p, & k=1 \\ 1-p, & k=0 \end{cases}, \quad M_X(s) = 1-p+pe^s
+$$
+**二项分布随机变量**，$k=0,1,\cdots,n$
+$$
+p_X(k) = \binom{n}{k}p^k(1-p)^{n-k}, \quad M_X(s) = (1-p+pe^s)^n
+$$
+**几何分布随机变量**，$k=1,2,\cdots$
+$$
+p_X(k) = p(1-p)^{k-1}, \quad M_X(s) = \frac{p e^s}{1-(1-p) e^s}
+$$
+**泊松分布随机变量**，$k=0,1,\cdots$
+$$
+p_X(k) = e^{-\lambda}\frac{\lambda^k}{k!}, \quad M_X(s) = e^{\lambda (e^s-1)}
+$$
+**离散均匀分布随机变量**，$k=a,a+1,\cdots,b$
+$$
+p_X(k) = \frac1{b-a+1}, \quad M_X(s) = \frac{e^{as}}{b-a+1} \cdot \frac{e^{(b-a+1)s}-1}{e^s-1}
+$$
+
+**连续均匀分布随机变量**，$a \le x \le b$
+$$
+f_X(x) = \frac1{b-a}, \quad M_X(s) = \frac1{b-a} \cdot \frac{e^{sb}-e^{sa}}{s}
+$$
+**指数分布随机变量**，$x \ge 0$
+$$
+f_X(x) = \lambda e^{-\lambda x}, \quad M_X(s) = \frac{\lambda}{\lambda - s}, \quad s < \lambda
+$$
+**正态分布随机变量**，$-\infty<x<\infty$
+$$
+f_X(x) = \frac1{\sqrt{2\pi}\sigma} e^{-(x-\mu)^2/{2\sigma^2}}, \quad M_X(s) = e^{(\sigma^2 s^2/2) + \mu s}
+$$
+
+#### 习题
+
+29. $M_X(s) = \frac12 e^s + \frac14 e^{2s} + \frac14 e^{3s}$
+    $E[X] = \frac12 + \frac14 \cdot 2 + \frac14 \cdot 3 = \frac74$
+    $E[X^2] = \frac12 + \frac14 \cdot 2^2 + \frac14 \cdot 3^2 = \frac{15}4$
+    $E[X^3] = \frac12 + \frac14 \cdot 2^3 + \frac14 \cdot 3^3 = \frac{37}4$
+
+30. $E[X^3] = \left. (3s+s^3)e^{s^2/2} \right|_{s=0} = 0$
+    $E[X^4] = \left. (3+6s^2+s^4)e^{s^2/2} \right|_{s=0} = 3$
+
+31. $E[X^3] = \left. \frac{6\lambda}{(\lambda-s)^4} \right|_{s=0} = \frac{6}{\lambda^3}$
+    $E[X^4] = \left. \frac{24\lambda}{(\lambda-s)^5} \right|_{s=0} = \frac{24}{\lambda^4}$
+    $E[X^5] = \left. \frac{120\lambda}{(\lambda-s)^6} \right|_{s=0} = \frac{120}{\lambda^5}$
+
+32. a. (2)不是矩母函数，因为$M(0) \ne 1$
+    b. $P(X=0) = \lim_{s \rightarrow -\infty} M(s) = e^{2(e^{-1}-1)}$
+
+33. $f_X(x) = \frac23 e^{-2x} + 2 e^{-3x}$
+
+34. 用卷积方法：
+    $$
+    \begin{align}
+    f_X(x) &= p_1 P(X_2+X_3=x-1) + (1-p_1) P(X_2+X_3=x) \\
+    &= p_1 p_2 P(X_3=x-2) + p_1(1-p_2)P(X_3=x-1) + (1-p_1)p_2 P(X_3=x-1) + (1-p_1)(1-p_2)P(X_3=x) \\
+    &= \begin{cases} (1-p_1)(1-p_2)(1-p_3), & x=0 \\
+    p_1(1-p_2)(1-p_3)+(1-p_1)p_2(1-p_3)+(1-p_1)(1-p_2)p_3, & x=1 \\
+    p_1 p_2(1-p_3) + p_1(1-p_2)p_3 + (1-p_1)p_2 p_3, & x=2 \\
+    p_1 p_2 p_3, & x=3 \end{cases} 
+    \end{align}
+    $$
+    用矩母函数方法：
+    $$
+    M_X(s) = (1-p_1+p_1 e^s)(1-p_2+p_2 e^s)(1-p_3+p_3 e^s)
+    $$
+
+35. $M_X(0) = 1 \Rightarrow c \cdot \frac92 = 1 \Rightarrow c = \frac29$
+    $E[X] = \left. \frac{2 e^s \left(24 e^s+14 e^{2 s}-4 e^{3 s}+3\right)}{9 \left(e^s-3\right)^2} \right|_{s=0} = \frac{37}{18}$
+    $M_X(s) = \frac29(3+4e^{2s}+2e^{3s})\frac13(1+\frac{e^s}3+\frac{e^{2s}}9+\cdots)$
+    所以$p_X(0)=\frac29$，$p_X(1)=\frac2{27}$
+    $E[X] = p_X(0) \cdot 0 + (1-p_X(0)) E[X|X \ne 0]$，所以$E[X|X \ne 0] = E[X]/(1-p_X(0)) = \frac{37}{14}$
+
+36. a. U是Y和Z的混合随机变量，$M_U(s) = \frac13 M_Y(s) + \frac23 M_Z(s) = \frac13 \frac2{2-s} + \frac23 e^{3(e^s-1)}$
+    b. $M_{2Z+3}(s) = e^{3s} M_Z(2s) = e^{3(e^{2s}+s-1)}$
+    c. $M_{Y+Z}(s) = M_Y(s)M_Z(s) = =frac2{2-s} e^{3(e^s-1)}
+
+37. 参考标准答案
+
+38. 参考书上的答案
+
+39. 参考书上的答案
+
+40. 参考书上的答案
+
+### 4.5 随机数个相互独立的随机变量之和
+
+记$X_1,X_2,\cdots,X_N$为均值$\mu$、方差$\sigma^2$的同分布随机变量，N为取正整数的随机变量，所有这些随机变量相互独立。记$Y=X_1+X_2+\cdots+X_N$，那么：
+
+* $E[Y] = E[X]E[N]$
+* $var(Y) = var(X)E[N] + (E[X])^2var(N)$
+* Y的矩母函数$M_Y(s)$可以通过把N的矩母函数$M_N(s)$中的$e^s$全部替换为X的矩母函数$M_X(s)$得到。
+
+#### 习题
+
+41. a. $M_N(s) = e^{\lambda(e^s-1)}$，$M_X(s) = \frac{e^s-1}s$，所以$M_Y(s) = e^{\lambda(\frac1s (e^s-1)-1)}$
+    b. $E[Y] = \lambda/2$
+    c. $E[Y] = E[X]E[N] = \lambda \frac12 = \lambda/2$
+
+42. 参考标准答案
+
+43. 参考标准答案
+
+44. a. $E[N] = E[K]E[M]$，$var(N) = var(K)E[M] + (E[K])^2var(M)$
+    b. $E[Y] = E[X]E[N] = E[X]E[K]E[M]$，$var(Y) = var(X)E[N] + (E[X])^2var(N) = var(X)E[K]E[M] + (E[X])^2(var(K)E[M]+(E[K])^2var(M))$
+    c. 略
+
+45. 参考书上的答案
