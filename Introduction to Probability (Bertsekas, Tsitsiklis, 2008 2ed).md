@@ -1246,3 +1246,91 @@ $$
 2. 参考书上的答案
 
 3. 参考书上的答案
+
+### 5.2 弱大数定理
+
+设$X_1,X_2,\cdots,X_n,\cdots$独立同分步，均值为$\mu$，则对任意的$\epsilon>0$，当$n \rightarrow \infty$时：
+$$
+P(|M_n - \mu| \ge \epsilon) = P(\left| \frac{X_1+\cdots+X_n}n - \mu \right| \ge \epsilon) \rightarrow 0
+$$
+
+#### 习题
+
+4. a. $\epsilon$缩小为原来的一半，对应$\sigma^2$缩小为原来的$\frac14$，对应n放大为原来的4倍
+   b. $\delta$缩小为原来的一半，对应$\sigma^2$缩小为原来的$\frac12$，对应n放大为原来的2倍
+
+### 5.3 依概率收敛
+
+设$X_1,X_2,\cdots,X_n,\cdots$是随机变量序列(不必相互独立)，a为一实数，如果对任意的$\epsilon>0$，有：
+$$
+\lim_{n \rightarrow \infty} P(|X_n-a| \ge \epsilon) = 0
+$$
+则称$X_n$**依概率收敛**于a。
+
+也可以这样定义：对任意$\epsilon > 0$和$\delta > 0$，存在$n_0$，使得对所有的$n \ge n_0$，都有
+$$
+P(|X_n-a| \ge \epsilon) \le \delta
+$$
+称$\epsilon$为**精度**，$\delta$为**置信水平**。
+
+可以证明，如果所有的$X_n$有相同的期望，并且方差$var(X_n)$趋于0，则$X_n$依概率收敛于$\mu$。
+
+注意：$X_n$依概率收敛于a，不一定有$E[X_n]$也收敛于a。
+
+5. a. 令$a=0$，$P(|Y_n-0| \ge \epsilon) = P(|X_n| \ge n\epsilon) = \max(1-n\epsilon,0)$，所以$Y_n$依概率收敛于0
+   b. 令$a=0$，$P(|Y_n-0| \ge \epsilon) = P(|X_n| \ge \sqrt[n]\epsilon) = 1-\sqrt[n]\epsilon$，所以$Y_n$依概率收敛于0
+   c. 令$a=0$，$P(|Y_n-0| \ge \epsilon) \le P((\max(|X_1|,\cdots,|X_n|))^n \ge \epsilon) = 1-\sqrt[n]\epsilon$，所以$Y_n$依概率收敛于0
+   d. 令$a=1$，$P(|Y_n-1| \ge \epsilon) = P(1-X_1>\epsilon) \cdots P(1-X_n>\epsilon) = (\frac{1-\epsilon}2)^n$，所以$Y_n$依概率收敛于0
+
+6. 参考书上的答案
+
+7. 参考书上的答案
+
+### 5.4 中心极限定理
+
+设$X_1,X_2,\cdots,X_n,\cdots​$是独立同分布的随机变量序列，均值为$\mu​$，方差为$\sigma^2​$，记$Z_n=\frac{X_1+\cdots+X_n-n\mu}{\sqrt n \sigma}​$，则$Z_n​$的分布函数的极限是标准正太分布函数。
+
+#### 习题
+
+8. $P(X_1+\cdots+X_{100} \ge 55.5) = P(\frac{X_1+\cdots+X_{100} - 50}{\sqrt{100}\cdot 1/2} \ge \frac{55.5-50}{\sqrt{100}\cdot 1/2}) = 1 - \Phi(1.1) \approx 0.1357$
+
+9. a. $P(X \le 5.5) = P(\frac{X-50 \cdot 0.05}{\sqrt{50(0.05-0.05^2)}} \le \frac{5.5-2.5}{\sqrt{50(0.05-0.05^2)}}) \approx \Phi(1.947) \approx 0.9742$
+   b. $\lambda = 50 \cdot 0.05 = 2.5$
+   $P(X \le 5.5) = \sum_{k=0}^{5} e^{-\lambda}\frac{\lambda^k}{k!} \approx 0.958$
+
+10. a. 中文版翻译错误。$P(X \le 439.5) = P(\frac{X-100 \cdot 5}{\sqrt{100 \cdot 9}} \le \frac{439.5-500}{30}) = \Phi(-2.0167) = 1-\Phi(2.0167) \approx 0.02187$
+    b. $P(\frac{X_1+\cdots+X_n - 5n}{\sqrt{9n}} \ge \frac{200}{\sqrt{9n}})$，所以$\Phi(\frac{200}{3\sqrt{n}}) \ge 0.95$，所以$\frac{200}{3\sqrt{n}} \ge 1.64485$，$n \le 1642.7$
+    c. $P(N \ge 220) = P(X_1+\cdots+X_{219} \le 1000) = \Phi(-2.1398) \approx 0.016184$
+
+11. X-Y的期望为0，方差为$var(X-Y)=var(X)+var(Y)=\frac16$
+    $P(|W-E[W]|<0.001)=\Phi(0.001 \cdot 4\sqrt{6}) - \Phi(-0.001 \cdot 4\sqrt{6}) \approx 0.007818$
+
+12. 参考书上的答案
+
+### 5.5 强大数定理
+
+设$X_1,\cdots,X_n$是均值为$\mu$的独立同分步随机变量序列，则样本均值以概率1收敛于$\mu$，即：
+$$
+P(\lim_{n \rightarrow \infty} \frac{X_1+\cdots+X_n}{n} = \mu) = 1
+$$
+
+设$X_1,X_2,\cdots,X_n,\cdots$是随机变量序列(不必相互独立)，a为一实数，如果：
+$$
+P(\lim_{n \rightarrow \infty} X_n = a)  = 1
+$$
+则称$X_n$**以概率1收敛**于a。
+以概率1收敛蕴含依概率收敛，但反之不成立。
+
+#### 习题
+
+13. 参考书上的答案
+
+14. 参考书上的答案
+
+15. 参考书上的答案
+
+16. 参考书上的答案
+
+17. 参考书上的答案
+
+18. 参考书上的答案
