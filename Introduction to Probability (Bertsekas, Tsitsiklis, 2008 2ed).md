@@ -48,31 +48,31 @@
    $$
 
 10. 证明：
-    $$
-    \begin{align} & P((A \cap B^c) \cup (A^c \cap B)) \\
-    &= P(A \cap B^c) + P(A^c \cap B) - P(A \cap B^c \cap A^c \cap B) \\
-    &= P(A \cap B^c) + P(A \cap B) + P(A^c \cap B) + P(A \cap B) - 2P(A \cap B) \\
-    &= P(A) + P(B) - 2 P(A \cap B) \end{align}
-    $$
+$$
+   \begin{align} & P((A \cap B^c) \cup (A^c \cap B)) \\
+   &= P(A \cap B^c) + P(A^c \cap B) - P(A \cap B^c \cap A^c \cap B) \\
+   &= P(A \cap B^c) + P(A \cap B) + P(A^c \cap B) + P(A \cap B) - 2P(A \cap B) \\
+   &= P(A) + P(B) - 2 P(A \cap B) \end{align}
+$$
 
 11. a. 证明：(书上的答案更好，但有公式错误)
-    $$
-    \begin{align} P(A \cap B) &= 1- P(A^c \cup B^c) \\
-    &= 1 - (P(A^c) + P(B^c) - P(A^c \cap B^c)) \\
-    &\ge 1 - P(A^c) - P(B^c) \\
-    &= 1 - (1 - P(A)) - (1 - P(B)) \\
-    &= P(A) + P(B) - 1 \end{align}
-    $$
-    b. 略
+$$
+   \begin{align} P(A \cap B) &= 1- P(A^c \cup B^c) \\
+   &= 1 - (P(A^c) + P(B^c) - P(A^c \cap B^c)) \\
+   &\ge 1 - P(A^c) - P(B^c) \\
+   &= 1 - (1 - P(A)) - (1 - P(B)) \\
+   &= P(A) + P(B) - 1 \end{align}
+$$
+   b. 略
 
 12. a. 证明：
-    $$
-    \begin{align} P(A \cup B \cup C) &= P(A) + P(B \cup C) - P(A \cap (B \cup C)) \\
-    &= P(A) + P(B) + P(C) - P(B \cap C) - P(A \cap B \cup A \cap C) \\
-    &= P(A) + P(B) + P(C) - P(B \cap C) - P(A \cap B) - P(A \cap C) + P(A \cap B \cap A \cap C) \\
-    &= P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C) \end{align}
-    $$
-    b. 略
+$$
+   \begin{align} P(A \cup B \cup C) &= P(A) + P(B \cup C) - P(A \cap (B \cup C)) \\
+   &= P(A) + P(B) + P(C) - P(B \cap C) - P(A \cap B \cup A \cap C) \\
+   &= P(A) + P(B) + P(C) - P(B \cap C) - P(A \cap B) - P(A \cap C) + P(A \cap B \cap A \cap C) \\
+   &= P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C) \end{align}
+$$
+   b. 略
 
 13. 参考书上的答案
 
@@ -85,21 +85,24 @@ $$
 
 #### 习题
 
-14. a. 6/36 = 1/6
+14.  a. 6/36 = 1/6
     b. 2/6 = 1/3
     c. 1/6+1/6-1/36=11/36
     d. $2 \times \frac16 \times \frac56 / \frac56 = \frac13$
 
-15. 已知第一次为H，$P(HH|H_1) = p^2 / p = p $。已知至少一次H，$P(HH|H_{1 or 2}) = p^2 / (1-(1-p)^2) = p / (2-p) < p$，这个结论是对的。
+15.    已知第一次为H，$P(HH|H_1) = p^2 / p = p $。已知至少一次H，$P(HH|H_{1 or 2}) = p^2 / (1-(1-p)^2) = p / (2-p) < p$，这个结论是对的。
 
-16. 选中正常硬币且得到正面的概率是$\frac13 \times \frac12=\frac16$，得到正面的概率是$\frac13 (1+\frac12+0)=\frac12$，另一面是反面的概率是$\frac16 / \frac12=\frac13$
+16.    选中正常硬币且得到正面的概率是$\frac13 \times \frac12=\frac16$，得到正面的概率是$\frac13 (1+\frac12+0)=\frac12$，另一面是反面的概率是$\frac16 / \frac12=\frac13$
 
-17. 中文版翻译错误，被接受的概率。$\binom{95}{4} / \binom{100}{4} = \frac{95 \times 94 \times 93 \times 92}{100 \times 99 \times 98 \times 97} \approx 0.8119$
+17.    中文版翻译错误，被接受的概率。$\binom{95}{4} / \binom{100}{4} = \frac{95 \times 94 \times 93 \times 92}{100 \times 99 \times 98 \times 97} \approx 0.8119$
 
-18. 证明：
-    $$
-    P(A \cap B | B) = \frac{P(A \cap B \cap B)}{P(B)} = \frac{P(A \cap B)}{P(B)} = P(A|B)
-    $$
+18.    证明：
+      $$
+       P(A \cap B | B) = \frac{P(A \cap B \cap B)}{P(B)} = \frac{P(A \cap B)}{P(B)} = P(A|B)
+      $$
+
+
+
 
 ### 1.4 全概率定理和贝叶斯准则
 
@@ -123,58 +126,61 @@ $$
 
 #### 习题
 
-19. 如果$j \ne i$，在j号抽屉的概率是$p_j$，在j号而i号抽屉找不到的概率为1，在i号抽屉找不到的概率为$1-p_i d_i$，因此当在i号抽屉找不到时，在j号抽屉的概率是$\frac{p_j}{1-p_i d_i}$。如果$j=i$，在i号抽屉的概率是$p_i$，在i号而i号抽屉找不到的概率为$1-d_i$，在i号抽屉找不到的概率为$1-p_i d_i$，因此当在i号抽屉找不到时，在i号抽屉的概率是$\frac{p_i (1-d_i)}{1-p_i d_i}$。
+19.    如果$j \ne i$，在j号抽屉的概率是$p_j$，在j号而i号抽屉找不到的概率为1，在i号抽屉找不到的概率为$1-p_i d_i$，因此当在i号抽屉找不到时，在j号抽屉的概率是$\frac{p_j}{1-p_i d_i}$。如果$j=i$，在i号抽屉的概率是$p_i$，在i号而i号抽屉找不到的概率为$1-d_i$，在i号抽屉找不到的概率为$1-p_i d_i$，因此当在i号抽屉找不到时，在i号抽屉的概率是$\frac{p_i (1-d_i)}{1-p_i d_i}$。
 
-20. a. i. $p_w p_w + (p_w (1-p_w) + (1-p_w) p_w) p_w = 3 p_w^2 - 2 p_w^3$，ii. $p_d p_d p_w = p_d^2 p_w$，iii. $p_w p_d + p_w (1-p_d) p_w + (1-p_w) p_w p_w = (2 p_w^2 + p_w p_d) - (p_w^3 + p_w^2 p_d)$
-    b. 当$p_d > \frac{1 - 4 p_w^2 + 2 p_w^3}{2 p_w (1-p_w)}$时，即使$p_w < 1/2$，第3种策略的胜率也大于1/2。比如$p_w=0.45$，只要$p_d > 0.752$就行了。
+20.    a. i. $p_w p_w + (p_w (1-p_w) + (1-p_w) p_w) p_w = 3 p_w^2 - 2 p_w^3$，ii. $p_d p_d p_w = p_d^2 p_w$，iii. $p_w p_d + p_w (1-p_d) p_w + (1-p_w) p_w p_w = (2 p_w^2 + p_w p_d) - (p_w^3 + p_w^2 p_d)$
+       b. 当$p_d > \frac{1 - 4 p_w^2 + 2 p_w^3}{2 p_w (1-p_w)}$时，即使$p_w < 1/2$，第3种策略的胜率也大于1/2。比如$p_w=0.45$，只要$p_d > 0.752$就行了。
 
-21. 让$p(m,k)$为第一个取球的人在坛子里还剩k个黑球时的取胜概率，有：
-    $$
-    p(m,k) = \frac{m}{m+k} + \frac{k}{m+k}(1-p(m,k-1)) = 1 - \frac{k}{m+k} p(m,k-1)
-    $$
+21.    让$p(m,k)$为第一个取球的人在坛子里还剩k个黑球时的取胜概率，有：
+      $$
+       p(m,k) = \frac{m}{m+k} + \frac{k}{m+k}(1-p(m,k-1)) = 1 - \frac{k}{m+k} p(m,k-1)
+      $$
 
-22. 第1次取出白球的概率是 $p(1) = \frac{m}{m+n}$，第2次取出白球的概率是
-    $$
-    \begin{align} p(2) &= p(1) \frac{m+1}{m+n+1} + (1-p(1)) \frac{m}{m+n+1} \\
-    &= \frac{m+p(1)}{m+n+1} \\
-    &= \frac{m}{m+n} \end{align}
-    $$
-    依此类推，每次取出白球的概率和第一次的概率是一样的。
+22.    第1次取出白球的概率是 $p(1) = \frac{m}{m+n}$，第2次取出白球的概率是
+      $$
+       \begin{align} p(2) &= p(1) \frac{m+1}{m+n+1} + (1-p(1)) \frac{m}{m+n+1} \\
+       &= \frac{m+p(1)}{m+n+1} \\
+       &= \frac{m}{m+n} \end{align}
+      $$
+       依此类推，每次取出白球的概率和第一次的概率是一样的。
 
-23. 参考标准答案
+23.    参考标准答案
 
-24. 假设提问的是A，提问前有3种等概释放可能：释放AB、释放AC、释放BC，加上看守的答案后有4种可能：(释放AB，看守说B)、(释放AC，看守说C)、(释放BC，看守说B)、(释放BC，看守说C)，这4种可能的概率是：1/3、1/3、1/3 * 1/2、1/3 * 1/2，这4种可能中第1、2种A会被释放，因此提问后A的释放概率是1/3 + 1/3 = 2/3，不变。
+24.    假设提问的是A，提问前有3种等概释放可能：释放AB、释放AC、释放BC，加上看守的答案后有4种可能：(释放AB，看守说B)、(释放AC，看守说C)、(释放BC，看守说B)、(释放BC，看守说C)，这4种可能的概率是：1/3、1/3、1/3 * 1/2、1/3 * 1/2，这4种可能中第1、2种A会被释放，因此提问后A的释放概率是1/3 + 1/3 = 2/3，不变。
 
-25. **标准答案可疑，概率模型不完整。如果认为钱数的取值范围是$[0,\infty)$，算出来的期望将是无穷，无法作出决策**
+25.    **标准答案可疑，概率模型不完整。如果认为钱数的取值范围是$[0,\infty)$，算出来的期望将是无穷，无法作出决策**
 
-26. a. $P(A|B) = P(A) = p$
-    b. $P(C) = P(A) P(C|A) + P(A^c) P(C|A^c) = p(1-q) + (1-p)(1-q) 0.5 = \frac{1+p}2(1-q)$，所以
-    $$
-    P(A|C) = \frac{P(A) P(C|A)}{P(C)} = \frac{p(1-q)}{\frac{1+p}2(1-q)} = \frac{2p}{1+p} > p = P(A)
-    $$
+26.    a. $P(A|B) = P(A) = p$
+       b. $P(C) = P(A) P(C|A) + P(A^c) P(C|A^c) = p(1-q) + (1-p)(1-q) 0.5 = \frac{1+p}2(1-q)$，所以
+      $$
+       P(A|C) = \frac{P(A) P(C|A)}{P(C)} = \frac{p(1-q)}{\frac{1+p}2(1-q)} = \frac{2p}{1+p} > p = P(A)
+      $$
 
-27. 参考标准答案
+27.    参考标准答案
 
-28. 证明：
-    $$
-    \begin{align} \sum_{i=1}^n P(C_i|B) P(A|B \cap C_i) &= \sum_{i=1}^n \frac{P(B \cap C_i)}{P(B)} \frac{P(A \cap B \cap C_i)}{P(B \cap C_i)} \\
-    &= \sum_{i=1}^n \frac{P(A \cap B \cap C_i)}{P(B)} \\
-    &= \frac{P(A \cap B)}{P(B)} \\
-    &= P(A|B) \end{align}
-    $$
+28.    证明：
+      $$
+       \begin{align} \sum_{i=1}^n P(C_i|B) P(A|B \cap C_i) &= \sum_{i=1}^n \frac{P(B \cap C_i)}{P(B)} \frac{P(A \cap B \cap C_i)}{P(B \cap C_i)} \\
+       &= \sum_{i=1}^n \frac{P(A \cap B \cap C_i)}{P(B)} \\
+       &= \frac{P(A \cap B)}{P(B)} \\
+       &= P(A|B) \end{align}
+      $$
 
-29. a. $P(A|B) > P(A) \Leftrightarrow \frac{P(A \cap B)}{P(B)} > P(A) \Leftrightarrow \frac{P(A \cap B)}{P(A)} > P(B) \Leftrightarrow P(B|A) > P(B)$
-    b. 证明：
-    $$
-    \begin{align} P(A|B^c) < P(A) &\Leftrightarrow P(A \cap B^c) < P(A) P(B^c) \\
-    &\Leftrightarrow 1-P(A \cap B) < P(A)-P(A)P(B) \\
-    &\Leftrightarrow P(A \cap B) > P(A)P(B) - P(A) + 1 \ge P(A)P(B) \\
-    &\Leftrightarrow P(A|B) > P(A) \end{align}
-    $$
-    c. A={宝物在第一个地点}，B={在第一个地点发现宝物}
-    $$
-    P(A^c|B^c) = \frac{P(A^c \cap B^c)}{P(B^c)} = \frac{1-\beta}{\beta (1-p) + (1-\beta)} = \frac{1-\beta}{1-\beta p} > 1-\beta = P(A^c)
-    $$
+29.    a. $P(A|B) > P(A) \Leftrightarrow \frac{P(A \cap B)}{P(B)} > P(A) \Leftrightarrow \frac{P(A \cap B)}{P(A)} > P(B) \Leftrightarrow P(B|A) > P(B)$
+       b. 证明：
+      $$
+       \begin{align} P(A|B^c) < P(A) &\Leftrightarrow P(A \cap B^c) < P(A) P(B^c) \\
+       &\Leftrightarrow 1-P(A \cap B) < P(A)-P(A)P(B) \\
+       &\Leftrightarrow P(A \cap B) > P(A)P(B) - P(A) + 1 \ge P(A)P(B) \\
+       &\Leftrightarrow P(A|B) > P(A) \end{align}
+      $$
+       c. A={宝物在第一个地点}，B={在第一个地点发现宝物}
+      $$
+       P(A^c|B^c) = \frac{P(A^c \cap B^c)}{P(B^c)} = \frac{1-\beta}{\beta (1-p) + (1-\beta)} = \frac{1-\beta}{1-\beta p} > 1-\beta = P(A^c)
+      $$
+
+
+
 
 ### 1.5 独立性
 
@@ -194,65 +200,65 @@ $$
 
 #### 习题
 
-30. $P(S) = p^2 + 2 p(1-p)\frac12 = p$，所以两条和一条是一样的。
+30.    $P(S) = p^2 + 2 p(1-p)\frac12 = p$，所以两条和一条是一样的。
 
-31. a. $P(S) = P(0|0) + P(1|1) = p(1-\epsilon_0) + (1-p)(1-\epsilon_1) = 1 - p \epsilon_0 - (1-p)\epsilon_1$
-    b. $P(1011) = P(1)P(0)P(1)P(1) = (1-\epsilon_0)(1-\epsilon_1)^3$
-    c. $P(000) = \binom{3}{2}P(0|0)P(0|0)P(1|0)+P(0|0)P(0|0)P(0|0) = (1-\epsilon_0)^2 (1+2\epsilon_0)$
-    d. $(1-\epsilon_0)^2 (1+2\epsilon_0) > 1-\epsilon_0 \Rightarrow \epsilon_0(1-2\epsilon_0)>0 \Rightarrow 0<\epsilon_0<0.5$
-    e. 
-    $$
-    \begin{align} P(T_0|R_{101}) &= \frac{P(T_0) P(R_{101}|T_0)}{P(T_0) P(R_{101}|T_0)+P(T_1) P(R_{101}|T_1)} \\
-    &= \frac{p \epsilon_0^2 (1-\epsilon_0)}{p \epsilon_0^2 (1-\epsilon_0) + (1-p)\epsilon_1(1-\epsilon_1)^2} \end{align}
-    $$
+31.    a. $P(S) = P(0|0) + P(1|1) = p(1-\epsilon_0) + (1-p)(1-\epsilon_1) = 1 - p \epsilon_0 - (1-p)\epsilon_1$
+       b. $P(1011) = P(1)P(0)P(1)P(1) = (1-\epsilon_0)(1-\epsilon_1)^3$
+       c. $P(000) = \binom{3}{2}P(0|0)P(0|0)P(1|0)+P(0|0)P(0|0)P(0|0) = (1-\epsilon_0)^2 (1+2\epsilon_0)$
+       d. $(1-\epsilon_0)^2 (1+2\epsilon_0) > 1-\epsilon_0 \Rightarrow \epsilon_0(1-2\epsilon_0)>0 \Rightarrow 0<\epsilon_0<0.5$
+       e. 
+      $$
+       \begin{align} P(T_0|R_{101}) &= \frac{P(T_0) P(R_{101}|T_0)}{P(T_0) P(R_{101}|T_0)+P(T_1) P(R_{101}|T_1)} \\
+       &= \frac{p \epsilon_0^2 (1-\epsilon_0)}{p \epsilon_0^2 (1-\epsilon_0) + (1-p)\epsilon_1(1-\epsilon_1)^2} \end{align}
+      $$
 
-32. 参考标准答案。假设父母必须生两个，国王有一个兄弟的概率是1/3
+32.    参考标准答案。假设父母必须生两个，国王有一个兄弟的概率是1/3
 
-33. 连续抛硬币知道出现连续两次不同的情况，然后用最后一次的结果来作决策
+33.    连续抛硬币知道出现连续两次不同的情况，然后用最后一次的结果来作决策
 
-34. 第一个子系统有效的概率是p，第三个子系统有效的概率是$1-(1-p)^2=p(2-p)$，第二个子系统有效的概率是：
-    $$
-    P(2) = 1-(1-p)(1- (1-(1-p)^3) p) = p(1+3p-6p^2+4p^3-p^4)
-    $$
+34.    第一个子系统有效的概率是p，第三个子系统有效的概率是$1-(1-p)^2=p(2-p)$，第二个子系统有效的概率是：
+      $$
+       P(2) = 1-(1-p)(1- (1-(1-p)^3) p) = p(1+3p-6p^2+4p^3-p^4)
+      $$
 
-35. 有效概率为：$\sum_{i=k}^n\binom{n}{i}p^i (1-p)^{n-i}$
+35.    有效概率为：$\sum_{i=k}^n\binom{n}{i}p^i (1-p)^{n-i}$
 
-36. a. 停电概率为：$\prod_{i=1}^n p_i$
-    b. 停电概率为：$\prod_{i=1}^n p_i + \sum_{i=1}^n (1-p_i) \prod_{j \ne i}p_j$
+36.    a. 停电概率为：$\prod_{i=1}^n p_i$
+       b. 停电概率为：$\prod_{i=1}^n p_i + \sum_{i=1}^n (1-p_i) \prod_{j \ne i}p_j$
 
-37. 参考标准答案
+37.    参考标准答案
 
-38. T领先的概率：$p_T = \sum_{i=6}^8 \binom{8}{i} p^i (1-p)^{8-i}$。W领先的概率：$p_W = \sum_{i=4}^8 \binom{8}{i}(1-p)^i p^{8-i}$
+38.    T领先的概率：$p_T = \sum_{i=6}^8 \binom{8}{i} p^i (1-p)^{8-i}$。W领先的概率：$p_W = \sum_{i=4}^8 \binom{8}{i}(1-p)^i p^{8-i}$
 
-39. 好天气：$\sum_{i=k}^n \binom{n}{i} p_g^i (1-p_g)^{n-i}$。坏天气：$\sum_{i=k}^n \binom{n}{i} p_b^i (1-p_b)^{n-i}$
+39.    好天气：$\sum_{i=k}^n \binom{n}{i} p_g^i (1-p_g)^{n-i}$。坏天气：$\sum_{i=k}^n \binom{n}{i} p_b^i (1-p_b)^{n-i}$
 
-40. $q_n = p(1-q_{n-1}) + (1-p)q_{n-1}$，$q_0=1$，$q_1=1-p$
-    $$
-    q_n = p + p\sum_{i=1}^{n-1}(1-2p)^i + (1-2p)^n = \frac12(1 + (1-2p)^n)
-    $$
+40.    $q_n = p(1-q_{n-1}) + (1-p)q_{n-1}$，$q_0=1$，$q_1=1-p$
+      $$
+       q_n = p + p\sum_{i=1}^{n-1}(1-2p)^i + (1-2p)^n = \frac12(1 + (1-2p)^n)
+      $$
 
-41. 参考标准答案。中文版翻译不清楚。
+41.    参考标准答案。中文版翻译不清楚。
 
-42. 参考书上的答案
+42.    参考书上的答案
 
-43. a. $P(A \cap B^c) = P(A) - P(A \cap B) = P(A) - P(A) P(B) = P(A) P(B^c)$
-    b. 利用a的结果直接可证
+43.    a. $P(A \cap B^c) = P(A) - P(A \cap B) = P(A) - P(A) P(B) = P(A) P(B^c)$
+       b. 利用a的结果直接可证
 
-44. $P(A \cap B | C) = \frac{P(A \cap B \cap C)}{P(C)} = \frac{P(A)P(C)}{P(C)} \frac{P(B)P(C)}{P(C)} = P(A|C) P(B|C)$
+44.    $P(A \cap B | C) = \frac{P(A \cap B \cap C)}{P(C)} = \frac{P(A)P(C)}{P(C)} \frac{P(B)P(C)}{P(C)} = P(A|C) P(B|C)$
 
-45. 证明：
-    $$
-    \begin{align} P(A_1 \cup A_2 | A_3 \cap A_4) &= \frac{P((A_1 \cup A_2) \cap A_3 \cap A_4)}{P(A_3 \cap A_4)} \\
-    &= \frac{P(A_1 \cap A_3 \cap A_4) + P(A_2 \cap A_3 \cap A_4) - P(A_1 \cap A_2 \cap A_3 \cap A_4)}{P(A_3 \cap A_4)} \\
-    &= P(A_1) + P(A_2) - P(A_1 \cap A_2) \\
-    &= P(A_1 \cup A_2) \end{align}
-    $$
+45.    证明：
+      $$
+       \begin{align} P(A_1 \cup A_2 | A_3 \cap A_4) &= \frac{P((A_1 \cup A_2) \cap A_3 \cap A_4)}{P(A_3 \cap A_4)} \\
+       &= \frac{P(A_1 \cap A_3 \cap A_4) + P(A_2 \cap A_3 \cap A_4) - P(A_1 \cap A_2 \cap A_3 \cap A_4)}{P(A_3 \cap A_4)} \\
+       &= P(A_1) + P(A_2) - P(A_1 \cap A_2) \\
+       &= P(A_1 \cup A_2) \end{align}
+      $$
 
-46. 参考书上的答案
+46.    参考书上的答案
 
-47. 参考书上的答案
+47.    参考书上的答案
 
-48. 参考书上的答案
+48.    参考书上的答案
 
 ### 1.6 计数法
 
@@ -535,7 +541,7 @@ $$
 
 #### 习题
 
-24. a. $p_X(x) = \frac17, x=-2,-1,\cdots,4$，$E[X] = 1$
+24.  a. $p_X(x) = \frac17, x=-2,-1,\cdots,4$，$E[X] = 1$
     $$
     p_Y(y) = \begin{cases} \frac1{21}, & y=-3,5 \\
     \frac2{21}, &y = -2,4 \\
@@ -544,19 +550,19 @@ $$
     $$
     b. $E[200 X + 100 Y] = 200 \times 1 + 100 \times 1 = 300$
 
-25. a. $p_{I,J}(i,j) = \frac1{\sum_i m_i}, j \le m_i$，$p_I(i) = \frac{m_i}{\sum_i m_i}$，$p_J(j) = \frac{\sum_{i|m_i \ge j}1}{\sum_i m_i}$
+25.  a. $p_{I,J}(i,j) = \frac1{\sum_i m_i}, j \le m_i$，$p_I(i) = \frac{m_i}{\sum_i m_i}$，$p_J(j) = \frac{\sum_{i|m_i \ge j}1}{\sum_i m_i}$
     b. $\sum_{j=1}^{m_i} (a p_{i,j} + b (1-p_{i,j}))$
 
-26. a. $p_X(x) = \binom{3}{1}\frac1{10}(\frac{110-x}{10})^2 + \binom{3}{2}(\frac1{10})^2 \frac{110-x}{10} + (\frac1{10})^3$
+26.  a. $p_X(x) = \binom{3}{1}\frac1{10}(\frac{110-x}{10})^2 + \binom{3}{2}(\frac1{10})^2 \frac{110-x}{10} + (\frac1{10})^3$
     b. $E[X] = 103.025 < 105.5$
 
-27. 参考书上的答案
+27.  参考书上的答案
 
-28. 参考书上的答案
+28.  参考书上的答案
 
-29. 参考书上的答案
+29.  参考书上的答案
 
-30. 参考书上的答案
+30.  参考书上的答案
 
 ### 2.6 条件
 
@@ -778,11 +784,11 @@ $$
 
 #### 习题
 
-15. i. $f_{X,Y}(x,y) = \frac2{\pi r^2}$
+15.  i. $f_{X,Y}(x,y) = \frac2{\pi r^2}$
     ii. $f_Y(y) = \int_{-r}^r f_{X,Y}(x,y) dx = \frac4{\pi r^2} \sqrt{r^2-y^2}$，$E[Y] = \left. -\frac4{3 \pi r^2}(r^2-y^2)^{3/2} \right|_0^r = \frac{4r}{3\pi}$
     iii. $E[Y] = \int_B y f_{X,Y}(x,y) dxdy = 0$
 
-16. 设X是与格子相交的边数，X的期望：
+16.  设X是与格子相交的边数，X的期望：
     $$
     E[X] = (P(A)+P(B)-2P(A \cap B)) + 2P(A \cap B) = P(A)+P(B) = \frac{2l}{\pi}(\frac1a+\frac1b)
     $$
@@ -792,76 +798,76 @@ $$
     P(A \cup B) = P(A) + P(B) - P(A \cap B) = \frac{l}{\pi a b}(2a + 2b - l)
     $$
 
-17. 参考书上的答案
+17.  参考书上的答案
 
 ### 3.5 条件
 
 #### 习题
 
-18. a. $E[X] = \int_1^3 x f_X(x) dx = \left. \frac{x^3}{12} \right|_1^3 = \frac{13}{6}$，$P(A) = \int_2^3 f_X(x) dx = \frac58$，$E[X|A] = \frac{\int_2^3 \frac{x^2}{4} dx}{P(A)} = \frac{38}{15}$
+18.  a. $E[X] = \int_1^3 x f_X(x) dx = \left. \frac{x^3}{12} \right|_1^3 = \frac{13}{6}$，$P(A) = \int_2^3 f_X(x) dx = \frac58$，$E[X|A] = \frac{\int_2^3 \frac{x^2}{4} dx}{P(A)} = \frac{38}{15}$
     b. $E[Y] = \int_1^3 x^2 f_X(x) dx = 5$，$E[Y^2] = \int_1^3 x^4 f_X(x) dx = \frac{91}3$，$var(Y) = E[Y^2] - (E[Y])^2 = \frac{16}3$
 
-19. 中文版翻译错误。
+19.  中文版翻译错误。
     a. $\int_1^2 f_X(x) dx = 1 \Rightarrow \left. -\frac{c}{x} \right|_1^2 = 1 \Rightarrow c = 2$
     b. $P(A) = \int_{1.5}^2 2x^{-2} dx = \frac13$，$f_{X|A}(x) = \frac{2x^{-2}}{\frac13} = 6x^{-2}, 1.5 < x \le 2$
     c. $E[Y|A] = \frac{\int_{1.5}^2 2 dx}{\frac13} = 3$，$E[Y^2|A] = 3\int_{1.5}^2 2x^2 dx = 9.25$，$var(Y) = 9.25-3^2=0.25$
 
-20. $P(A<5)(5 + E[B]) + P(A \ge 5)(E[A+B]) = (1-e^{-5/30})(5+30)+e^{-5/30}(35+30) = 60.3945$
+20.    $P(A<5)(5 + E[B]) + P(A \ge 5)(E[A+B]) = (1-e^{-5/30})(5+30)+e^{-5/30}(35+30) = 60.3945$
 
-21. 中文版翻译错误。
-    a. $f_{X,Y}(x,y) = f_Y(y) f_{X|Y}(x|y) = \frac1l \frac1y = \frac1{ly}$
-    b. $f_X(x) = \int_x^l f_{X,Y}(x,y) dy = \frac1l \ln(l/x)$
-    c. $E[X] = \int_0^l x f_X(x) dx = \frac{l}4$
-    d. $E[X] = E[Y]E[X/Y] = \frac{l}2 \cdot \frac12 = \frac{l}4$
+21.    中文版翻译错误。
+       a. $f_{X,Y}(x,y) = f_Y(y) f_{X|Y}(x|y) = \frac1l \frac1y = \frac1{ly}$
+       b. $f_X(x) = \int_x^l f_{X,Y}(x,y) dy = \frac1l \ln(l/x)$
+       c. $E[X] = \int_0^l x f_X(x) dx = \frac{l}4$
+       d. $E[X] = E[Y]E[X/Y] = \frac{l}2 \cdot \frac12 = \frac{l}4$
 
-22. i. 设两个点的座标为X和Y：
-    $P(\text{可以组成三角形})=2P(X<\frac12 \cap Y>\frac12)P(Y-X<\frac12 | X<\frac12 \cap Y>\frac12) = 2 \frac12 \frac12 \frac12 = \frac14$
-    ii. 设第一点座标为X，第二点座标为Y：
-    $P(\text{可以组成三角形})=P_X(x<\frac12)P_{Y|X}(\frac12<y<x+\frac12 | x<\frac12) = \int_0^{\frac12}\int_{\frac12}^{x+\frac12} \frac1{1-x} dy dx = \ln2-\frac12$
-    iii. 概率是ii的2倍，是$2\ln 2 - 1$
+22.    i. 设两个点的座标为X和Y：
+       $P(\text{可以组成三角形})=2P(X<\frac12 \cap Y>\frac12)P(Y-X<\frac12 | X<\frac12 \cap Y>\frac12) = 2 \frac12 \frac12 \frac12 = \frac14$
+       ii. 设第一点座标为X，第二点座标为Y：
+       $P(\text{可以组成三角形})=P_X(x<\frac12)P_{Y|X}(\frac12<y<x+\frac12 | x<\frac12) = \int_0^{\frac12}\int_{\frac12}^{x+\frac12} \frac1{1-x} dy dx = \ln2-\frac12$
+       iii. 概率是ii的2倍，是$2\ln 2 - 1$
 
-23. a. $f_{X,Y}(x,y) = 2$
-    b. $f_Y(y) = \int_0^{1-y} f_{X,Y}(x,y) dx = 2(1-y)$
-    c. $f_{X|Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} = \frac1{1-y}$
-    d. $E[X|Y=y] = \frac{1-y}{2}$，$E[X] = \int_0^1 f_Y(y) E[X|Y] dy = \frac{1-E[Y]}2$
-    e. $E[X] = E[Y] = \frac{1-E[X]}{2} \Rightarrow E[X] = \frac13$
+23.    a. $f_{X,Y}(x,y) = 2$
+       b. $f_Y(y) = \int_0^{1-y} f_{X,Y}(x,y) dx = 2(1-y)$
+       c. $f_{X|Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} = \frac1{1-y}$
+       d. $E[X|Y=y] = \frac{1-y}{2}$，$E[X] = \int_0^1 f_Y(y) E[X|Y] dy = \frac{1-E[Y]}2$
+       e. $E[X] = E[Y] = \frac{1-E[X]}{2} \Rightarrow E[X] = \frac13$
 
-24. 解：
-    $$
-    \begin{align}
-    E[X|Y] &= \frac12 - \frac{y}4 \\
-    E[X] &= \int_0^2 f_Y(y) E[X|Y] dy = \frac12 - \frac{E[Y]}4 \\
-    E[Y|X] &= 1-x \\
-    E[Y] &= \int_0^1 f_X(x) E[Y|X] dx = 1 - E[X] \\
-    E[X] &= \frac13 \\
-    E[Y] &= \frac23
-    \end{align}
-    $$
+24.    解：
+      $$
+       \begin{align}
+       E[X|Y] &= \frac12 - \frac{y}4 \\
+       E[X] &= \int_0^2 f_Y(y) E[X|Y] dy = \frac12 - \frac{E[Y]}4 \\
+       E[Y|X] &= 1-x \\
+       E[Y] &= \int_0^1 f_X(x) E[Y|X] dx = 1 - E[X] \\
+       E[X] &= \frac13 \\
+       E[Y] &= \frac23
+       \end{align}
+      $$
 
-25. 解：
-    $$
-    \begin{align}
-    f_{X,Y}(x,y) &= \frac1{2\pi\sigma^2} e^{-(x^2+y^2)/(2\sigma^2)} \\
-    P(R>c) &= \int_0^{2\pi}\int_c^\infty f_{R,\Theta}(r,\theta) rdrd\theta = e^{-\frac{c^2}{2\sigma^2}} \\
-    f_{X,Y|R>c}(x,y) &= \frac{f_{X,Y}(x,y)}{P(R>c)} = \frac1{2\pi\sigma^2} e^{-(x^2+y^2-c^2)/(2\sigma^2)}
-    \end{align}
-    $$
+25.    解：
+      $$
+       \begin{align}
+       f_{X,Y}(x,y) &= \frac1{2\pi\sigma^2} e^{-(x^2+y^2)/(2\sigma^2)} \\
+       P(R>c) &= \int_0^{2\pi}\int_c^\infty f_{R,\Theta}(r,\theta) rdrd\theta = e^{-\frac{c^2}{2\sigma^2}} \\
+       f_{X,Y|R>c}(x,y) &= \frac{f_{X,Y}(x,y)}{P(R>c)} = \frac1{2\pi\sigma^2} e^{-(x^2+y^2-c^2)/(2\sigma^2)}
+       \end{align}
+      $$
 
-26. 书上的答案有疑问
+26.    书上的答案有疑问
 
-27. 略
+27.    略
 
-28. 参考书上的答案
+28.    参考书上的答案
 
-29. 参考书上的答案
+29.    参考书上的答案
 
-30. 参考书上的答案
+30.    参考书上的答案
 
-31. 参考书上的答案
+31.    参考书上的答案
 
-32. 参考书上的答案
+32.    参考书上的答案
 
-33. 参考书上的答案
+33.    参考书上的答案
 
 ### 3.6 连续贝叶斯准则
 
@@ -967,28 +973,28 @@ $$
    $$
 
 10. 解：
-    $$
-    f_{X+Y}(z) = \sum_{x=1}^3 p_X(x) p_Y(z-x) = \frac13 (p_Y(z-1)+p_Y(z-2)+p_Y(z-3)) = \begin{cases} \frac16, & z=1 \\ \frac5{18}, & z=2 \\ \frac13, & z=3 \\ \frac16, & z=4 \\ \frac1{18}, & z=5 \end{cases}
-    $$
+$$
+   f_{X+Y}(z) = \sum_{x=1}^3 p_X(x) p_Y(z-x) = \frac13 (p_Y(z-1)+p_Y(z-2)+p_Y(z-3)) = \begin{cases} \frac16, & z=1 \\ \frac5{18}, & z=2 \\ \frac13, & z=3 \\ \frac16, & z=4 \\ \frac1{18}, & z=5 \end{cases}
+$$
 
 11. 证明：
-    $$
-    \begin{align} f_{X+Y}(z) &= \sum_{x=0}^\infty p_X(x) p_Y(z-x) \\
-    &= \sum_{x=0}^z p_X(x) p_Y(z-x) \\
-    &= \sum_{x=0}^z e^{-\lambda}\frac{\lambda^x}{x!} e^{-\mu}\frac{\mu^{z-x}}{(z-x)!} \\
-    &= e^{-(\lambda+\mu)}\frac1{z!} \sum_{x=0}^z \binom{z}{x}\lambda^x \mu^{z-x} \\
-    &= e^{-(\lambda+\mu)}\frac{(\lambda + \mu)^z}{z!} \end{align}
-    $$
+$$
+   \begin{align} f_{X+Y}(z) &= \sum_{x=0}^\infty p_X(x) p_Y(z-x) \\
+   &= \sum_{x=0}^z p_X(x) p_Y(z-x) \\
+   &= \sum_{x=0}^z e^{-\lambda}\frac{\lambda^x}{x!} e^{-\mu}\frac{\mu^{z-x}}{(z-x)!} \\
+   &= e^{-(\lambda+\mu)}\frac1{z!} \sum_{x=0}^z \binom{z}{x}\lambda^x \mu^{z-x} \\
+   &= e^{-(\lambda+\mu)}\frac{(\lambda + \mu)^z}{z!} \end{align}
+$$
 
 12. 参考标准答案
 
 13. 参考标准答案
 
 14. 证明：
-    $$
-    F_Z(z) = P(\min(X,Y) \le z) = 1 - P(X > z \cap Y > z) = 1-P(X > z) P(Y > z) = 1- e^{-\lambda z} e^{-\mu z} \\
-    f_Z(z) = (\lambda + \mu) e^{-(\lambda + \mu)z}
-    $$
+$$
+   F_Z(z) = P(\min(X,Y) \le z) = 1 - P(X > z \cap Y > z) = 1-P(X > z) P(Y > z) = 1- e^{-\lambda z} e^{-\mu z} \\
+   f_Z(z) = (\lambda + \mu) e^{-(\lambda + \mu)z}
+$$
 
 15. 参考书上的答案
 
@@ -1018,7 +1024,7 @@ $$
 
 #### 习题
 
-17. 证明：
+17.  证明：
     $$
     \begin{align} cov(X+Y,X-Y) &= E[(X+Y)(X-Y)] - E[X+Y]E[X-Y] \\
     &= E[X^2] - E[Y^2] - (E[X]+E[Y])(E[X]-E[Y]) \\
@@ -1026,7 +1032,7 @@ $$
     &= 0 \end{align}
     $$
 
-18. 解：
+18.  解：
     $$
     \begin{align} \rho(R,S) &= \frac{cov(W+X,X+Y)}{\sqrt{var(W+X)var(X+Y)}} \\
     &= \frac{cov(W,X)+cov(W,Y)+cov(X,X)+cov(X,Y)}{\sqrt{(var(W)+var(X)+2cov(W,X))(var(X)+var(Y)+2cov(X,Y))}} \\
@@ -1035,16 +1041,16 @@ $$
     \rho(R,T) &= \frac{cov(W+X,Y+Z)}{\sqrt{var(W+X)var(Y+Z)}} = 0 \end{align}
     $$
 
-19. 解：
+19.  解：
     $$
     \begin{align} \rho(X,Y) &= \frac{cov(X,a+bX+cX^2)}{\sqrt{var(X)var(a+bX+cX^2)}} \\
     &= \frac{b \cdot var(X) + c \cdot cov(X,X^2)}{\sqrt{b^2+2c^2}} \\
     &= \frac{b}{\sqrt{b^2+2c^2}}\end{align}
     $$
 
-20. 参考书上的答案
+20.  参考书上的答案
 
-21. 参考书上的答案
+21.  参考书上的答案
 
 ### 4.3 再论条件期望和条件方差
 
@@ -1154,56 +1160,56 @@ $$
 
 #### 习题
 
-29. $M_X(s) = \frac12 e^s + \frac14 e^{2s} + \frac14 e^{3s}$
+29.  $M_X(s) = \frac12 e^s + \frac14 e^{2s} + \frac14 e^{3s}$
     $E[X] = \frac12 + \frac14 \cdot 2 + \frac14 \cdot 3 = \frac74$
     $E[X^2] = \frac12 + \frac14 \cdot 2^2 + \frac14 \cdot 3^2 = \frac{15}4$
     $E[X^3] = \frac12 + \frac14 \cdot 2^3 + \frac14 \cdot 3^3 = \frac{37}4$
 
-30. $E[X^3] = \left. (3s+s^3)e^{s^2/2} \right|_{s=0} = 0$
+30.  $E[X^3] = \left. (3s+s^3)e^{s^2/2} \right|_{s=0} = 0$
     $E[X^4] = \left. (3+6s^2+s^4)e^{s^2/2} \right|_{s=0} = 3$
 
-31. $E[X^3] = \left. \frac{6\lambda}{(\lambda-s)^4} \right|_{s=0} = \frac{6}{\lambda^3}$
+31.  $E[X^3] = \left. \frac{6\lambda}{(\lambda-s)^4} \right|_{s=0} = \frac{6}{\lambda^3}$
     $E[X^4] = \left. \frac{24\lambda}{(\lambda-s)^5} \right|_{s=0} = \frac{24}{\lambda^4}$
     $E[X^5] = \left. \frac{120\lambda}{(\lambda-s)^6} \right|_{s=0} = \frac{120}{\lambda^5}$
 
-32. a. (2)不是矩母函数，因为$M(0) \ne 1$
+32.  a. (2)不是矩母函数，因为$M(0) \ne 1$
     b. $P(X=0) = \lim_{s \rightarrow -\infty} M(s) = e^{2(e^{-1}-1)}$
 
-33. $f_X(x) = \frac23 e^{-2x} + 2 e^{-3x}$
+33.    $f_X(x) = \frac23 e^{-2x} + 2 e^{-3x}$
 
-34. 用卷积方法：
-    $$
-    \begin{align}
-    f_X(x) &= p_1 P(X_2+X_3=x-1) + (1-p_1) P(X_2+X_3=x) \\
-    &= p_1 p_2 P(X_3=x-2) + p_1(1-p_2)P(X_3=x-1) + (1-p_1)p_2 P(X_3=x-1) + (1-p_1)(1-p_2)P(X_3=x) \\
-    &= \begin{cases} (1-p_1)(1-p_2)(1-p_3), & x=0 \\
-    p_1(1-p_2)(1-p_3)+(1-p_1)p_2(1-p_3)+(1-p_1)(1-p_2)p_3, & x=1 \\
-    p_1 p_2(1-p_3) + p_1(1-p_2)p_3 + (1-p_1)p_2 p_3, & x=2 \\
-    p_1 p_2 p_3, & x=3 \end{cases} 
-    \end{align}
-    $$
-    用矩母函数方法：
-    $$
-    M_X(s) = (1-p_1+p_1 e^s)(1-p_2+p_2 e^s)(1-p_3+p_3 e^s)
-    $$
+34.    用卷积方法：
+      $$
+       \begin{align}
+       f_X(x) &= p_1 P(X_2+X_3=x-1) + (1-p_1) P(X_2+X_3=x) \\
+       &= p_1 p_2 P(X_3=x-2) + p_1(1-p_2)P(X_3=x-1) + (1-p_1)p_2 P(X_3=x-1) + (1-p_1)(1-p_2)P(X_3=x) \\
+       &= \begin{cases} (1-p_1)(1-p_2)(1-p_3), & x=0 \\
+       p_1(1-p_2)(1-p_3)+(1-p_1)p_2(1-p_3)+(1-p_1)(1-p_2)p_3, & x=1 \\
+       p_1 p_2(1-p_3) + p_1(1-p_2)p_3 + (1-p_1)p_2 p_3, & x=2 \\
+       p_1 p_2 p_3, & x=3 \end{cases} 
+       \end{align}
+      $$
+       用矩母函数方法：
+      $$
+       M_X(s) = (1-p_1+p_1 e^s)(1-p_2+p_2 e^s)(1-p_3+p_3 e^s)
+      $$
 
-35. $M_X(0) = 1 \Rightarrow c \cdot \frac92 = 1 \Rightarrow c = \frac29$
-    $E[X] = \left. \frac{2 e^s \left(24 e^s+14 e^{2 s}-4 e^{3 s}+3\right)}{9 \left(e^s-3\right)^2} \right|_{s=0} = \frac{37}{18}$
-    $M_X(s) = \frac29(3+4e^{2s}+2e^{3s})\frac13(1+\frac{e^s}3+\frac{e^{2s}}9+\cdots)$
-    所以$p_X(0)=\frac29$，$p_X(1)=\frac2{27}$
-    $E[X] = p_X(0) \cdot 0 + (1-p_X(0)) E[X|X \ne 0]$，所以$E[X|X \ne 0] = E[X]/(1-p_X(0)) = \frac{37}{14}$
+35.    $M_X(0) = 1 \Rightarrow c \cdot \frac92 = 1 \Rightarrow c = \frac29$
+       $E[X] = \left. \frac{2 e^s \left(24 e^s+14 e^{2 s}-4 e^{3 s}+3\right)}{9 \left(e^s-3\right)^2} \right|_{s=0} = \frac{37}{18}$
+       $M_X(s) = \frac29(3+4e^{2s}+2e^{3s})\frac13(1+\frac{e^s}3+\frac{e^{2s}}9+\cdots)$
+       所以$p_X(0)=\frac29$，$p_X(1)=\frac2{27}$
+       $E[X] = p_X(0) \cdot 0 + (1-p_X(0)) E[X|X \ne 0]$，所以$E[X|X \ne 0] = E[X]/(1-p_X(0)) = \frac{37}{14}$
 
-36. a. U是Y和Z的混合随机变量，$M_U(s) = \frac13 M_Y(s) + \frac23 M_Z(s) = \frac13 \frac2{2-s} + \frac23 e^{3(e^s-1)}$
-    b. $M_{2Z+3}(s) = e^{3s} M_Z(2s) = e^{3(e^{2s}+s-1)}$
-    c. $M_{Y+Z}(s) = M_Y(s)M_Z(s) = =frac2{2-s} e^{3(e^s-1)}
+36.    a. U是Y和Z的混合随机变量，$M_U(s) = \frac13 M_Y(s) + \frac23 M_Z(s) = \frac13 \frac2{2-s} + \frac23 e^{3(e^s-1)}$
+       b. $M_{2Z+3}(s) = e^{3s} M_Z(2s) = e^{3(e^{2s}+s-1)}$
+       c. $M_{Y+Z}(s) = M_Y(s)M_Z(s) = =frac2{2-s} e^{3(e^s-1)}
 
-37. 参考标准答案
+37.    参考标准答案
 
-38. 参考书上的答案
+38.    参考书上的答案
 
-39. 参考书上的答案
+39.    参考书上的答案
 
-40. 参考书上的答案
+40.    参考书上的答案
 
 ### 4.5 随机数个相互独立的随机变量之和
 
@@ -1299,11 +1305,11 @@ $$
    $P(X \le 5.5) = \sum_{k=0}^{5} e^{-\lambda}\frac{\lambda^k}{k!} \approx 0.958$
 
 10. a. 中文版翻译错误。$P(X \le 439.5) = P(\frac{X-100 \cdot 5}{\sqrt{100 \cdot 9}} \le \frac{439.5-500}{30}) = \Phi(-2.0167) = 1-\Phi(2.0167) \approx 0.02187$
-    b. $P(\frac{X_1+\cdots+X_n - 5n}{\sqrt{9n}} \ge \frac{200}{\sqrt{9n}})$，所以$\Phi(\frac{200}{3\sqrt{n}}) \ge 0.95$，所以$\frac{200}{3\sqrt{n}} \ge 1.64485$，$n \le 1642.7$
-    c. $P(N \ge 220) = P(X_1+\cdots+X_{219} \le 1000) = \Phi(-2.1398) \approx 0.016184$
+   b. $P(\frac{X_1+\cdots+X_n - 5n}{\sqrt{9n}} \ge \frac{200}{\sqrt{9n}})$，所以$\Phi(\frac{200}{3\sqrt{n}}) \ge 0.95$，所以$\frac{200}{3\sqrt{n}} \ge 1.64485$，$n \le 1642.7$
+   c. $P(N \ge 220) = P(X_1+\cdots+X_{219} \le 1000) = \Phi(-2.1398) \approx 0.016184$
 
 11. X-Y的期望为0，方差为$var(X-Y)=var(X)+var(Y)=\frac16$
-    $P(|W-E[W]|<0.001)=\Phi(0.001 \cdot 4\sqrt{6}) - \Phi(-0.001 \cdot 4\sqrt{6}) \approx 0.007818$
+   $P(|W-E[W]|<0.001)=\Phi(0.001 \cdot 4\sqrt{6}) - \Phi(-0.001 \cdot 4\sqrt{6}) \approx 0.007818$
 
 12. 参考书上的答案
 
@@ -1334,3 +1340,84 @@ $$
 17. 参考书上的答案
 
 18. 参考书上的答案
+
+## 6 伯努利过程和泊松过程
+
+### 6.1 伯努利过程
+
+伯努利过程由一串伯努利试验组成，试验之间相互独立。
+
+相邻两次试验成功的时间间隔T也服从几何分布。
+
+第k次试验成功的时间Y等于k个独立几何分布随机变量之和，称为**帕斯卡分布**。
+$$
+\begin{align} p_Y(t) &= \binom{t-1}{k-1}p^k(1-p)^{t-k}, \quad t=k,k+1,\cdots\\
+E[Y] &= \frac{k}{p} \\
+var(Y) &= \frac{k(1-p)}{p^2} \end{align}
+$$
+
+#### 习题
+1. a. $p_R(k) = \binom{n}{k}p^k(1-p)^{n-k}$，$E[R]=np$，$var(R)=np(1-p)$
+   b. n>2，$p(1-p)^{n-1} + (1-p)p^{n-1}$
+   c. n>2，$\binom{n}{1}p(1-p)^{n-1} + \binom{n}{1}(1-p)p^{n-1}$
+   d. $E[R-G]=E[R]-E[G]=np-n(1-p)=n(2p-1)$，$var(R-G)=var(2R-n)=4np(1-p)$
+   e. $p_R(k) = \binom{n-2}{k-2}p^{k-2}(1-p)^{n-k}$，$E[R]=2+(n-2)p$，$var(R)=(n-2)p(1-p)$
+
+2. a. $\binom{6}{2}p^2(1-p)^4=0.2966$
+   b. 3阶帕斯卡分布，$E[X]-3=\frac3p-3=12-3=9$
+   c. 2阶帕斯卡分布，$p_X(8)p = \binom{8-1}{2-1}p^2(1-p)^6 p=0.01947$
+   d. 参考标准答案
+
+3. a. $p_1 = p_B p_{1|B} = 1/3$，$(1-p_1)^3p_1 = 0.09877$
+   b. $p_B p_I = 0.1389$
+   c. 5阶帕斯卡分布，$E[X]=5/p_1=15$
+   d. 5阶帕斯卡分布，$E[X]=5/p_{1|B}=12.5$
+   e. 用户1的第5个任务时经历的繁忙时间段数为X，则执行的用户2的任务数Y=X-5， $p_Y(y)=p_X(y+5)=\binom{y+5-1}{5-1}p_{1|B}^5(1-p_{1|B})^y$，$E[Y]=E[X]-5=7.5$，$var(Y)=var(X)=18.75$
+
+4. 参考书上的答案
+
+5. 参考书上的答案
+
+6. 参考书上的答案
+
+7. 参考书上的答案
+
+### 6.2 泊松过程
+
+一个到达过程，被称为强度为$\lambda$的泊松过程，如果具有如下性质：
+
+* **时间同质性**。相同时间长度$\tau$内发生k次到达的概率都是一样的。
+* **独立性**。不同时间段的到达次数是相互独立的。
+* **小区间概率**。时间长度$\tau$内发生k次到达的概率$P(k,\tau)$满足：
+$$
+\begin{align} 
+P(0,\tau) &= 1-\lambda\tau+o(\tau) \\
+P(1,\tau) &= \lambda\tau+o_1(\tau) \\
+P(k,\tau) &= o_k(\tau), \quad k=2,3,\cdots \\
+\lim_{\tau \rightarrow 0} \frac{o(\tau)}{\tau} = 0, \quad \lim_{\tau \rightarrow 0} \frac{o_k(\tau)}{\tau} = 0
+\end{align}
+$$
+
+时间长度$\tau$内发生k次到达的概率$P(k,\tau)$为：
+$$
+P(k,\tau) = e^{-\lambda\tau} \frac{(\lambda\tau)^k}{k!}
+$$
+并且
+$$
+E[N_\tau] = \lambda\tau \\
+var(N_\tau) = \lambda\tau
+$$
+
+第k次到达的时间Y等于k个独立指数分布随机变量之和，称为**埃尔朗分布**。
+$$
+\begin{align} f_Y(t) &= \frac{\lambda^k t^{k-1} e^{-\lambda t}}{(k-1)!}, \quad t \ge 0\\
+E[Y] &= \frac{k}{\lambda} \\
+var(Y) &= \frac{k}{\lambda^2} \end{align}
+$$
+
+| 到达时间    | 离散       | 连续             |
+| ------- | -------- | -------------- |
+| 到达次数    | 二项分布     | 泊松分布           |
+| 相邻到达时间  | 几何分布     | 指数分布           |
+| 第k次到达时间 | k阶帕斯卡分布  | k阶埃尔朗分布(或伽玛分布) |
+| 到达率     | $p$/每次试验 | $\lambda$/单位时间 |
