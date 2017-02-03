@@ -1387,7 +1387,7 @@ $$
 P(0,\tau) &= 1-\lambda\tau+o(\tau) \\
 P(1,\tau) &= \lambda\tau+o_1(\tau) \\
 P(k,\tau) &= o_k(\tau), \quad k=2,3,\cdots \\
-\lim_{\tau \rightarrow 0} \frac{o(\tau)}{\tau} = 0, \quad \lim_{\tau \rightarrow 0} \frac{o_k(\tau)}{\tau} = 0
+\lim_{\tau \rightarrow 0} \frac{o(\tau)}{\tau} &= 0, \quad \lim_{\tau \rightarrow 0} \frac{o_k(\tau)}{\tau} = 0
 \end{align}
 $$
 
@@ -1459,13 +1459,39 @@ $$
     h. 中文版翻译错误。
     一个A型灯泡的总寿命分布是参数1的2阶埃尔朗分布$f_A(t)=e^{-t}$
     两个B型灯泡的总寿命分布是参数3的2阶埃尔朗分布$f_{2B}(t)=9te^{-3t}$
-    $P(2A<2B) = \int_0^\infty f_A(\tau)P(2B>\tau)d\tau = \int_0^\infty \(1+3\tau)e^{-4\tau}d\tau = 7/16$
+    $P(2A<2B) = \int_0^\infty f_A(\tau)P(2B>\tau)d\tau = \int_0^\infty (1+3\tau)e^{-4\tau}d\tau = 7/16$
     i. B型灯泡个数服从二项分布，$E[T] = E[N]E[B] = 6/3 = 2$
     $var(T) = E[N]var(B) + (E[B])^2 var(N) = 6/9 + (1/3)^2 12/4 = 1$
-    j. 第一个灯泡是A型的概率是$\frac1{1+e^{-2t}}$，是B型的概率是$\frac1}{1+e^{2t}}$，期望是$t + \frac1{1+e^{-2t}} + \frac1}{1+e^{2t}}\frac13 = t + \frac13 + \frac23\frac1{1+e^{-2t}}$
+    j. 第一个灯泡是A型的概率是$\frac1{1+e^{-2t}}$，是B型的概率是$\frac1{1+e^{2t}}$，期望是$t + \frac1{1+e^{-2t}} + \frac1{1+e^{2t}}\frac13 = t + \frac13 + \frac23\frac1{1+e^{-2t}}$
 
 15. a. 参数为$(3+4)3=21$的泊松分布，均值为21，方差为21
     b. $p=\frac3{3+4}=\frac37$，$\binom{10}{3}(\frac37)^3(1-\frac37)^7 = 0.1879$
     c. 参数为$\frac{\lambda_A}{\lambda_A+\lambda_B}$的几何分布
     d. $P(T<t) = (1-t)^2$，$f_T(t) = -2(1-t)$
     e. 参考标准答案
+
+16. a. N+1是$p=e^{-\lambda\tau}$的几何分布，$E[N]=e^{\lambda\tau}-1$
+    b. 参考标准答案
+    c. 参考标准答案
+
+17. 参考标准答案
+
+18. 参考书上的答案
+
+19. 参考书上的答案
+
+20. 参考书上的答案
+
+21. 参考书上的答案
+
+22. 参考书上的答案
+
+23. 参考书上的答案
+
+24. 参考书上的答案
+
+25. 参考书上的答案
+
+26. 参考书上的答案
+
+27. 参考书上的答案
