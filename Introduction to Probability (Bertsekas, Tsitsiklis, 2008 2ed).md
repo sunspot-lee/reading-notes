@@ -1818,3 +1818,34 @@ $$
 2. a. 假设知道答案的先验概率是0.5，$\frac{0.5}{0.5+0.5 \times \frac13}=0.75$
    b. $n=6,p=\frac34$的二项分布
 
+### 8.2 点估计，假设检验，最大后验概率准则
+
+对随机变量$\Theta$，有先验概率$p_\Theta(\theta)$，经过观测后得到$X$会改变对$\Theta$的认识，得到后验概率$p_{\Theta|X}(\theta)$。寻找使后验概率最大化的$\hat\theta$，用这个值作为对$\Theta$的估计，这个就是**最大后验概率估计**。计算后验概率的均值$E[\Theta|X]$，用这个值作为对$\Theta$的估计，这个就是**条件期望估计**。
+
+#### 习题
+
+3. a. $f_{\Theta|X}(\theta|30)=\frac{10\theta^2 e^{-30\theta}}{\int_0^{1/5} 10\theta'^2 e^{-30\theta'} d\theta'}$，最大后验概率估计为$\hat\theta=\frac1{15}$，条件期望估计为$\hat\theta=0.090487$
+   b. $f_{\Theta|X}(\theta|30,25,15,40,20)=\frac{10\theta^6 e^{-130\theta}}{\int_0^{1/5} 10\theta'^6 e^{-130\theta'} d\theta'}$，最大后验概率估计为$\hat\theta=\frac3{65}$，条件期望估计为$\hat\theta=0.0538457$
+
+4. a. 对i类学生，选择题答对的概率为$\mu=\theta_i+(1-\theta_i)\frac13$，10个题答对k道的概率为$\binom{10}{k} \mu^k (1-\mu)^{10-k}$，后验概率为
+   $$
+   \begin{align}
+   p_{I|K}(i|k) &= \frac{p(k|\theta_i)}{\sum_{j=1}^3 p(k|\theta_j)} \\
+   &= c \binom{10}{k} (\frac13 + \frac23 \theta_i)^k (\frac23 - \frac23 \theta_i)^{10-k}
+   \end{align}
+   $$
+   经过计算，当$k \le 6$，学生属于第1类，当$k \le 9$，学生属于第2类，当$k = 10$，学生属于第3类。
+   b. 参考标准答案
+
+5. $f_{\Theta|X}(\theta|k) = c f_{\Theta}(\theta)\theta^k(1-\theta)^{n-k}$，求导得到
+   $$
+   \frac{d f_{\Theta|X}}{d\theta} = \begin{cases} c 4(k+1)\theta^k(1-\theta)^{n-k} - c4(n-k)\theta^{k+1}(1-\theta)^{n-k-1}, \quad \theta<0.5 \\
+   c 4k\theta^{k-1}(1-\theta)^{n-k+1} - c4(n-k+1)\theta^k(1-\theta)^{n-k}, \quad \theta>0.5 \end{cases} \\
+   \hat\theta = \begin{cases} \frac{k+1}{n+1}, \quad \frac{k+1}{n+1}<\frac12 \\
+   \frac12, \quad \frac{k}{n+1}<\frac12<\frac{k+1}{n+1} \\
+   \frac{k}{n+1}, \quad \frac{k}{n+1}>\frac12 \end{cases}
+   $$
+
+6. a. $f_\Theta(1)f_{T|\Theta}(x|1) = 0.3 c_1 e^{-0.04x}$
+   $f_\Theta(2)f_{T|\Theta}(x|2) = 0.7 c_2 e^{-0.16x}$
+   当x=20，$0.3 c_1 e^{-0.04 \times 20} < 0.7 c_2 e^{-0.16 \times 20}$，所以认为是容易题，出错概率是$0.3 c_1 e^{-0.04 \times 20} / (0.3 c_1 e^{-0.04 \times 20} + 0.7 c_2 e^{-0.16 \times 20})$
