@@ -1868,3 +1868,22 @@ $$
    c. 参考标准答案
 
 9. 参考书上的答案
+
+### 8.3 贝叶斯最小均方估计
+
+#### 习题
+
+10. 解得：
+    $$
+    E[\Theta|X=x] = \begin{cases} \frac{x}2+27.5, \quad & 55 \le x \le 60 \\ x-2.5, \quad & 60 \le x \le 75 \\ \frac{x}2 + 35, \quad & 75 \le x \le 80 \end{cases}
+    $$
+
+11. $p_X(x)=\frac1\Theta$
+    $p_{\Theta|X}(\theta|x)=\frac{p_\Theta(\theta)p_{X|\Theta}(x|\theta)}{\sum_{\theta'=x}^{100}p_\Theta(\theta')p_{X|\Theta}(x|\theta')d\theta'}=\frac1{\theta\sum_{\theta'=x}^{100}\frac1\theta'}$
+    最大后验概率估计是$x$，最小均方估计是$\frac{101-x}{\sum_{k=x}^{100}\frac1k}$
+
+12. a. $f_{\Theta|X_1,\cdots,X_n}(\theta|x_1,\cdots,x_n)=\frac1{\theta^n \int_{\max(x_1,\cdots,x_n)}^1\frac1{\theta'^n}d\theta'}$，最小均方估计是$\frac{(n-1) \left(x^n-x^2\right)}{(n-2) \left(x^n-x\right)}$
+    b. 略
+    c. 略
+
+13. 参考书上的答案
