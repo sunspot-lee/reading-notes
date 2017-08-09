@@ -1887,3 +1887,27 @@ $$
     c. 略
 
 13. 参考书上的答案
+
+### 8.4 贝叶斯线性最小均方估计
+
+对$\Theta$观测得到$X$，用$X$的线性组合$aX+b$来估计$\Theta$，使得均方误差最小，称为**线性最小均方估计**：
+$$
+\hat\Theta=E[\Theta]+\frac{cov(\Theta,X)}{var(X)}(X-E[X])=E[\Theta]+\rho\frac{\sigma_\Theta}{\sigma_X}(X-E[X])
+$$
+其中
+$$
+\rho=\frac{cov(\Theta,X)}{\sigma_\Theta \sigma_X}
+$$
+是$\Theta$和$X$的相关系数。
+
+所得均方估计误差是
+$$
+var(\Theta-\hat\Theta)=(1-\rho^2)\sigma_\Theta^2
+$$
+
+#### 习题
+
+14. $cov(\Theta,X)=E[\Theta(\Theta+W)]-7\times7=E[\Theta^2]+7\times0-49=3$
+    $\sigma_\Theta=3$，$\sigma_X=3+\frac13$
+    线性最小均方估计量为$\hat\Theta=7+\frac3{\sqrt(3(3+\frac13))}\frac{\sqrt3}{\sqrt(3+\frac13)}(X-7)=\frac9{10}X+\frac7{10}$
+    均方估计误差为$(1-(\frac3{\sqrt{10}})^2)3=\frac3{10}$
