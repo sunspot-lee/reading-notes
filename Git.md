@@ -2,28 +2,56 @@
 
 文件在Git中有3种状态：已提交committed、已暂存staged、已修改modified。
 
-工作目录中的文件修改后要先stage到暂存区，然后commit到Git仓库
+工作目录中的文件修改后要先stage到暂存区，然后commit到本地仓库
 
-**新建Git仓库**
+**新建本地仓库**
 
-1. 在工作目录中执行'git init'
-2. 执行'git add [file]'把文件纳入版本控制
-3. 执行'git commit -m [说明]'提交
+```
+git init
+```
 
-**复制Git仓库**：
+执行后工作目录中所有文件都标识为‘已修改’。
 
-执行'git clone [url]'
+**复制远程仓库**
 
-**文件状态的转换**：执行'git status'查询
+```
+git clone [url]
+```
 
-![img](http://git.oschina.net/progit/figures/18333fig0201-tn.png)
+**查询文件状态**
 
-**把文件纳入Git控制**：执行'git add [file]'
+```
+git status
+```
 
-**stage已修改文件**：执行'git add [file]'
+**暂存已修改文件**
 
-**commit已暂存文件**：执行'git commit -m [说明]'
+```
+git add [file]
+```
 
-**本地仓库到远程仓库**：执行'git push [remote-name][branch-name]'
+**提交已暂存文件**
 
-**远程仓库到本地仓库**：执行'git fetch [remote-name]'
+```
+git commit -m [说明]
+```
+
+**查询提交历史**
+
+```
+git log
+```
+
+**本地仓库到远程仓库**
+
+```g
+git push [remote-name] [branch-name]
+```
+
+**远程仓库到本地仓库**
+
+```
+git fetch [remote-name]
+```
+
+拉取到的数据并不会自动与工作目录中的文件合并
