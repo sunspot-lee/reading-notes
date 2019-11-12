@@ -1,4 +1,4 @@
-" When started as "evim", evim.vim will already have done these settings.
+﻿" When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
@@ -6,163 +6,142 @@ endif
 " 1
 set nocompatible
 " 2
-set path=.,,**
+set path+=** " buffer
 set incsearch
-set ignorecase
-set smartcase
+"set ignorecase
+"set smartcase
 " 4
-set linebreak
 set display=lastline,uhex
-set number
-set relativenumber
+set number " local
 " 5
 set hlsearch
+set cursorline " window
 " 10
 set guifont=Consolas:h12
-"set guifontwide=Micorsoft\ YaHei\ UI:h12
+set guifontwide=KaiTi:h12
 set renderoptions=type:directx
-"set langmenu=zh_CN.UTF-8
 " 12
 set ruler
+set visualbell
 " 14
 set backspace=indent,eol,start
 set showmatch
 " 15
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-set smartindent
+set tabstop=4 " buffer
+set shiftwidth=4 " buffer
+set autoindent " buffer
+set smartindent " buffer
 " 16
-set foldmethod=syntax
+set foldlevel=99 " window
+set foldmethod=syntax " window
+" 17
+set diffopt+=iwhite,indent-heuristic,algorithm:histogram
 " 19
 set autowrite
-set autoread
+set autoread " buffer
+" 20
+set directory=$TEMP
 " 21
 set wildmenu
 " 23
-set makeencoding=char
+set makeencoding=char " buffer
 " 26
 set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,default,latin1
 set ambiwidth=double
 " 27
 set virtualedit=block
-set pythonthreedll=python36.dll
-
-"language message zh_CN.UTF-8
+set pyxversion=3
+set pythonthreedll=python37.dll
 
 filetype off
+
 call plug#begin('~/vimfiles/plugged')
 
-Plug 'junegunn/fzf'
+Plug 'tpope/vim-fugitive'
+
+Plug 'mhinz/vim-signify'
+nmap <leader>v :SignifyHunkDiff<CR>
+nmap <leader>u :SignifyHunkUndo<CR>
+
+Plug 'Yggdroot/LeaderF'
+let g:Lf_WildIgnore = { 'dir': ['.*'], 'file': [] }
+let g:Lf_Gtagsconf = 'd:/Tools/Global/share/gtags/gtags.conf'
+let g:Lf_Gtagslabel = 'native-pygments'
+let g:Lf_GtagsAutoGenerate = 1
+nmap <leader>m :LeaderfMru<CR>
+map <F2> :LeaderfFunction<CR>
+map <F3> :LeaderfRgInteractive<CR><C-R><C-W>
+map <F4> :Leaderf gtags --by-context<CR>
+
 Plug 'valloric/listtoggle'
-Plug 'majutsushi/tagbar'
-Plug 'bling/vim-airline'
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>q'
+nmap <A-Up> :cprevious<CR>
+nmap <A-Down> :cnext<CR>
+
 Plug 'easymotion/vim-easymotion'
+nmap s         <Plug>(easymotion-s2)
+nmap <Leader>s <Plug>(easymotion-sn)
+"<Plug>(easymotion-jumptoanywhere)
+
+Plug 'tpope/vim-repeat'
+
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
-"Plug 'valloric/youcompleteme'
-Plug 'w0rp/ale'
-Plug 'ervandew/supertab'
-Plug 'klen/python-mode'
-
-call plug#end()
-filetype plugin indent on
-syntax on
-
-"source $VIMRUNTIME/mswin.vim
-behave mswin
-noremap <C-S> :update<CR>
-noremap <C-F4> <C-W>c
-vnoremap <C-X> "+x
-vnoremap <C-C> "+y
-map <C-V> "+gP
-
-" for cursor
-nnoremap j gj
-nnoremap k gk
-noremap <C-Down> <C-E>
-noremap <C-Up> <C-Y>
-
-" for windows
-noremap <C-H> <C-W>h
-noremap <C-J> <C-W>j
-noremap <C-K> <C-W>k
-noremap <C-L> <C-W>l
-
-" for search & substitute
-set grepprg=rg\ --vimgrep
-vnoremap * y/\V<C-R>"<CR>
-nnoremap <C-F> :grep -F -w "<C-R><C-W>"
-vnoremap <C-F> y:grep -F "<C-R>""
-nnoremap <C-\> :,$s/\V\<<C-R><C-W>\>/
-vnoremap <C-\> y:,$s/\V<C-R>"/
-nnoremap <F3> :cprev<CR>
-nnoremap <F4> :cnext<CR>
-
-" 首字母大写
-nnoremap gc guiw~w
-" 全单词大写
-nnoremap gU gUiww
-" 全单词小写
-nnoremap gu guiww
-
-" for matchit
-packadd! matchit
-
-" for FZF
-nnoremap <F6> :FZF<CR>
-
-" for ListToggle
-let g:lt_quickfix_list_toggle_map = '<F7>'
-"let g:lt_location_list_toggle_map = '<F7>'
-
-" for Tagbar
-nnoremap <F8> :TagbarToggle<CR>
-let g:tagbar_sort = 0
-
-" for NERDCommenter
 let NERDMenuMode = 0
 
-" for youcompleteme
-nnoremap <F12> :YcmCompleter GoTo<CR>
+Plug 'tpope/vim-surround'
 
-" for python-mode
-let g:pymode_options_max_line_length = 100
-let g:pymode_virtualenv = 0
-let g:pymode_rope = 0
+Plug 'andrewradev/linediff.vim'
+
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+let g:jedi#completions_command = "<C-N>"
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = 2
+
+call plug#end()
+
+"filetype plugin indent on
+syntax on
+
+packadd! matchit
+packadd! editexisting
+
+"behave mswin
+map <C-S> :update<CR>
+map <C-F4> <C-W>c
+
+" for cursor
+nmap j gj
+nmap k gk
+
+" for windows
+nmap <C-H> <C-W>h
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-L> <C-W>l
+tmap <C-h> <C-w>h
+tmap <C-j> <C-w>j
+tmap <C-k> <C-w>k
+tmap <C-l> <C-w>l
+
+" for 输入法
+set imactivatekey=C-space
+imap <ESC> <ESC>:set iminsert=2<CR>
+
+vmap * y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
 
-function! Compile(cc)
-    wall
-    cgetexpr system(substitute(a:cc, '%', '\=expand("%")', ''))
-    bot copen
-endfunction
-command! -nargs=* Vc set efm& | call Compile('vcenv && cl <args>')
-command! -nargs=* Vc64 set efm& | call Compile('vcenv 64 && cl <args>')
-command! -nargs=* Lnt set efm=%f:%l:%c:\ %m | call Compile('lint <args>')
-
-augroup C
-    autocmd!
-    autocmd FileType c,cpp set nowrap
-    autocmd FileType c set grepprg=rg\ --vimgrep\ -t\ c
-    autocmd FileType cpp set grepprg=rg\ --vimgrep\ -t\ cpp
-augroup END
-
-augroup Matlab
-    autocmd!
-    autocmd FileType matlab set nowrap
-    autocmd FileType matlab set grepprg=rg\ --vimgrep\ -t\ matlab
-augroup END
+command -nargs=* Pylint compiler pylint | make -d C <args> %
+command -nargs=* Python compiler python | make % <args>
 
 augroup Python
-    autocmd!
-    autocmd FileType python set nowrap
-    autocmd FileType python set grepprg=rg\ --vimgrep\ -t\ py
+	autocmd!
+	autocmd FileType python setlocal nowrap
+	autocmd FileType python setlocal foldmethod=indent
+	autocmd FileType python map <F5> :Python<CR>
+	autocmd FileType python map <S-F5> :!ipython --pdb %<CR>
 augroup END

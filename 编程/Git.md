@@ -1,8 +1,10 @@
-# Git
+# 1. Git
 
 文件在Git中有3种状态：已提交committed、已暂存staged、已修改modified。
 
-工作目录中的文件修改后要先stage到暂存区，然后commit到本地仓库
+工作目录中的文件修改后要先add到暂存区，然后commit到本地仓库，然后push到远端仓库
+
+远端仓库中的文件修改后要先fetch到本地仓库，然后checkout到工作目录；或者从远端仓库直接pull到工作目录
 
 **新建本地仓库**
 

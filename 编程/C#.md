@@ -1,3 +1,10 @@
+---
+tags: [编程]
+title: 'C#'
+created: '2018-12-29T00:53:49.512Z'
+modified: '2019-10-28T01:13:59.303Z'
+---
+
 ## Hello World
 
 project编译后得到assembly，可以是exe文件或者dll文件。

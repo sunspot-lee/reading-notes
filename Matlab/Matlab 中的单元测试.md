@@ -1,3 +1,10 @@
+---
+tags: [Matlab]
+title: Matlab 中的单元测试
+created: '2019-10-28T01:09:13.210Z'
+modified: '2019-10-28T01:09:36.627Z'
+---
+
 # Matlab中的单元测试
 
 ## 基于脚本的单元测试

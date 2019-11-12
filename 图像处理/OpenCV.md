@@ -1,6 +1,21 @@
+---
+tags: [图像处理]
+title: OpenCV
+created: '2018-12-29T00:53:49.625Z'
+modified: '2019-10-28T01:30:35.688Z'
+---
+
 # OpenCV
 
 ## 基础结构
+
+### _InputArray, _OutputArray, _InputOutputArray 用来传输函数入参的代理类
+
+* 如果需要传入或传出函数一个空数组，可以用cv::noArray()
+* _InputArray类有很多成员函数可以获取入参的属性
+* 读入参之前，先调用 _InputArray::getMat()构造Mat
+* 可以用 _OutputArray::needed()来检查需不需要计算出参
+* 写出参之前，先调用 _OutputArray::create()分配内存，再调用 _OutputArray::getMat()构造Mat
 
 ### Point_<T> 2D点(x,y)
 
@@ -10,6 +25,7 @@ typedef Point_<int> Point;
 typedef Point_<float> Point2f;
 typedef Point_<double> Point2d;
 
+pt.x; pt.y; // 坐标
 pt1.dot(pt2); // 点积
 pt1.ddot(pt2); // 双精度点积
 pt1.cross(pt2); // 叉积
@@ -27,7 +43,7 @@ typedef Point3_<int> Point3i;
 typedef Point3_<float> Point3f;
 typedef Point3_<double> Point3d;
 
-Point3_<T> pt;
+pt.x; pt.y; pt.z; // 坐标
 pt1.dot(pt2); // 点积
 pt1.ddot(pt2); // 双精度点积
 pt1.cross(pt2); // 叉积
@@ -154,10 +170,6 @@ A.cross(B), A.dot(B)
 ```
 ### Mat_<T> 指定元素类型的Mat
 
-### InputArray 用来定义函数入参
-
-### OutputArray 用来定义函数出参
-
 ### NAryMatIterator n维数组迭代器
 
 ### SparseMat 稀疏数组
@@ -232,7 +244,7 @@ cout << tm;
 
 ### 常量
 
-```
+```c++
 CV_PI
 CV_2PI
 CV_LOG2 // ln(2)

@@ -1,3 +1,10 @@
+---
+tags: [编程]
+title: 'C# books'
+created: '2018-12-29T00:53:49.514Z'
+modified: '2019-10-28T01:13:59.313Z'
+---
+
 https://www.quora.com/What-are-the-best-books-for-C-for-the-beginner-intermediate-and-advanced-levels
 
 

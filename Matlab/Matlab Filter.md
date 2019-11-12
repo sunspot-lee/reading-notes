@@ -1,3 +1,10 @@
+---
+tags: [Matlab]
+title: Matlab Filter
+created: '2019-10-28T01:09:13.198Z'
+modified: '2019-10-28T01:09:36.631Z'
+---
+
 # Matlab 滤波器
 
 ## IIR滤波器
@@ -114,4 +121,16 @@
 `b=rcosdesign(beta,span,sps...)` 升余弦滤波器
 
 `b=sgolay(k,f...)` 平滑滤波器
+
+
+
+序列$x[n]$的Fourier变换为
+$$
+X(e^{j\omega}) = \sum_{n=-\infty}^{+\infty} x[n] e^{-j\omega n}
+$$
+当$\omega=0$，$X(1)=\sum_{n=-\infty}^{+\infty}x[n]$
+
+当$\omega=\pi$，$X(-1)=\sum_{n=-\infty}^{+\infty}(-1)^n x[n]$
+
+当$\omega=\pm\pi/2$，$X(\pm j)=\sum_{n=-\infty}^{+\infty}(\mp j)^n x[n]$
 
