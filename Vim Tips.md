@@ -1,4 +1,25 @@
-## Vim 中的模式
+---
+title: Vim Tips
+created: '2018-12-29T00:53:49.639Z'
+modified: '2019-11-08T07:18:33.500Z'
+---
+
+## Vim中的搜索
+
+* 一般字符串搜索
+  * `/abc`, `?abc`, `*`, `#` 在当前buffer中搜索
+  * `:grep abc` 在当前目录中搜索
+* tag搜索。必须先建立tag数据库。更准确，比如搜索时忽略注释和字符串
+  * `:tag abc`,  `<ctrl>]` 跳转到定义
+  * `:tj abc`, `g<ctrl>]` 选择tag跳转
+  * `<ctrl>T` 回到上一个tag
+
+## VIM中的代码定位
+* `[m`, `]m` 跳到前/后一个Method的开头
+* `[M`, `]M` 跳到前/后一个Method的结尾
+* `gd`, `gD` 跳到标志符的本地/全局声明处
+
+## Vim 中的搜索模式
 
 ### 偏移
 
@@ -12,7 +33,7 @@
 
 `/abc/b+2` 搜索到 abc 后光标会放在 c 上
 
-`/abc;def` 搜索到 abc 后继续搜索 def
+`/abc/;/def` 搜索到 abc 后继续搜索 def
 
 ### 逻辑
 
@@ -66,31 +87,94 @@
 
 \ze 结束匹配，`abc\zedef` 匹配 abc，要求后面有 def
 
-## 插件FZF
+## 字母大小写
 
-`:FZF`
+| 命令      | 含义                               |
+| --------- | ---------------------------------- |
+| ~         | 切换当前字母大小写，并右移光标     |
+| ~{motion} | 切换{motion}经过范围字母大小写     |
+| g~~       | 切换当前行字母大小写               |
+| {Visual}~ | Visual模式，切换选择范围字母大小写 |
 
-## 插件ListToggle
+`:s/\v<(\w)(\w*)/\u\1\L\2/g`使当前行所有单词首字母大写，其它字母小写
 
-`<F7>`
+## Vim中的Python
 
-## 插件Tagbar
+`:[range]py3 {stmt}`执行Python语句{stmt}
 
-`<F8>`
+`:[range]py3do {body}`执行Python函数，函数入参为(line, linenr)，函数体为{body}，函数返回string或None
 
-## 插件airline
+`:[range]py3f[ile] {file}`执行Python脚本{file}
 
-TODO
+Vim为Python提供了一个vim模块，模块中定义了：
 
-## 插件EasyMotion
+* command(str) 在ex模式下执行vim命令str，返回None
+* eval(str) 用vim计算表达式str，返回string、list、或dict
+* bindeval(str) 类似eval(str)，但是返回对象
+* strwidth(str) 返回str显示宽度
+* buffers
+* windows
+* tabpages
+* current
 
-`<Leader><key>`
+## 插件Fugitive：执行Git命令
 
-## 插件NERDCommenter
+## 插件Signify：处理Hunk对象(c)
 
-`<Leader>c<space>` 改变注释状态
+`]c` Next hunk
 
-## 插件Surround
+`[c` Previous hunk
+
+`]C` Last hunk
+
+`[C` First hunk
+
+`:SignifyDiff` 在一个新Tab中比较当前文件与VCS的不同
+
+`:SignifyFold` 在一个新Tab中打开当前文件并折叠没修改的部分
+
+`:SignifyHunkDiff` 显示当前行的变化
+
+`:SignifyHunkUndo` Undo当前行的变化
+
+## 插件LeaderF：模糊搜索
+
+`:Leaderf {subcmd}` 执行LeaderF的子命令：file、tag、function、mru、searchHistory、cmdHistory、help、line、colorscheme、gtags、self、bufTag、buffer、rg
+
+`<leader>f` 搜索文件
+
+`<leader>b` 搜索buffer
+
+`<leader>m` 搜索mru
+
+LeaderF被启动后
+
+* `<ctrl>r` fuzzy search和regex之间切换
+* `<ctrl>f` full path和name only之间切换
+* `<tab>` normal模式
+* `<cr>` 打开
+* `<ctrl>x` 水平分割打开
+* `<ctrl>]` 垂直分割打开
+* `<ctrl>t` 新tab打开
+* `<ctrl>p` 预览
+
+## 插件ListToggle：开关QuickFix窗口和Location窗口
+
+`<leader>q` 开关quick-fix窗口
+
+`<leader>l` 开关location窗口
+
+## 插件EasyMotion：快速移动
+
+`<leader><leader>{cmd}`
+
+## 插件Repeat
+
+## 插件NERDCommenter：注释
+
+`<leader>c<space>` 开关注释
+
+## 插件Surround：编辑成对tag
 
 `ds<tag>` 删除
 
@@ -100,18 +184,18 @@ TODO
 
 `S<tag>` visual模式下的增加
 
-## 插件Tabular
+## 插件LineDiff：比较
 
-`:Tabularize /<tag>`
+## 插件Jedi：Python
 
-## 插件ALE
+`<leader>d` 跳转到定义或赋值
 
-TODO
+`<leader>g` 跳转到赋值
 
-## 插件Supertab
+`<leader>s` 跳转到stub
 
-`<Tab>` insert模式下触发
+`K` 文档
 
-## 插件Python-mode
+`<leader>r` 改名
 
-`<leader>r` 运行
+`<leader>n` 搜索引用
