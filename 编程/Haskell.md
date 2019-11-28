@@ -1,3 +1,10 @@
+---
+tags: [编程]
+title: Haskell
+created: '2019-11-12T06:16:17.976Z'
+modified: '2019-11-12T06:25:52.277Z'
+---
+
 # Haskell
 
 ## if ... then ... else

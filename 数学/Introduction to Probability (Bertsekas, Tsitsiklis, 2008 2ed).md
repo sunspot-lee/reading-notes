@@ -1,3 +1,10 @@
+---
+tags: [数学]
+title: 'Introduction to Probability (Bertsekas, Tsitsiklis, 2008 2ed)'
+created: '2019-11-12T06:16:37.074Z'
+modified: '2019-11-12T06:26:31.889Z'
+---
+
 ## 1 样本空间与概率
 
 ### 1.2 概率模型

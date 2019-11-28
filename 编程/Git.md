@@ -1,3 +1,10 @@
+---
+tags: [编程]
+title: Git
+created: '2018-12-29T00:53:49.533Z'
+modified: '2019-11-12T06:25:52.217Z'
+---
+
 # 1. Git
 
 文件在Git中有3种状态：已提交committed、已暂存staged、已修改modified。
