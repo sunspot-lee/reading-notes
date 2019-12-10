@@ -50,14 +50,10 @@ set encoding=utf-8
 set ambiwidth=double
 " 27
 set virtualedit=block
-set pyxversion=3
-set pythonthreedll=python37.dll
 
 filetype off
 
 call plug#begin('~/vimfiles/plugged')
-
-Plug 'tpope/vim-fugitive'
 
 Plug 'mhinz/vim-signify'
 nmap <leader>v :SignifyHunkDiff<CR>
@@ -128,7 +124,8 @@ tmap <C-l> <C-w>l
 set imactivatekey=C-space
 imap <ESC> <ESC>:set iminsert=2<CR>
 
-vmap * y/\V<C-R>=escape(@",'/\')<CR><CR>
+" 搜索选中字符串
+vmap * y/\V\<<C-R>=escape(@",'/\')<CR>\><CR>
 
 autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
