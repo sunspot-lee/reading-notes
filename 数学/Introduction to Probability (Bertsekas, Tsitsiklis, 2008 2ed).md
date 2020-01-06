@@ -1,8 +1,8 @@
 ---
 tags: [数学]
 title: 'Introduction to Probability (Bertsekas, Tsitsiklis, 2008 2ed)'
-created: '2019-11-12T06:16:37.074Z'
-modified: '2019-11-12T06:26:31.889Z'
+created: '2020-01-06T14:04:11.504Z'
+modified: '2020-01-06T14:08:55.959Z'
 ---
 
 ## 1 样本空间与概率

@@ -1,8 +1,8 @@
 ---
-tags: [通信]
+tags: [信号处理]
 title: Signals and Systems
 created: '2018-12-29T06:42:09.825Z'
-modified: '2019-10-28T01:13:21.885Z'
+modified: '2020-01-06T14:11:44.517Z'
 ---
 
 ## 一阶连续时间系统

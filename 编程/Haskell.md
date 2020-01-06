@@ -1,8 +1,8 @@
 ---
 tags: [编程]
 title: Haskell
-created: '2019-11-12T06:16:17.976Z'
-modified: '2019-11-12T06:25:52.277Z'
+created: '2020-01-06T14:03:58.137Z'
+modified: '2020-01-06T14:09:43.365Z'
 ---
 
 # Haskell
