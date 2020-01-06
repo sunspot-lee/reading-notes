@@ -5,6 +5,14 @@ created: '2019-10-28T01:10:04.427Z'
 modified: '2019-10-28T01:10:26.475Z'
 ---
 
+# 文档
+
+`np.info(obj)` 看文档
+
+`np.source(obj)` 看源代码
+
+`np.lookfor(what)` 用关键字搜索文档
+
 # ndarray
 
 numpy的中心数据结构是ndarray，它描述的是一个多维同质数组。

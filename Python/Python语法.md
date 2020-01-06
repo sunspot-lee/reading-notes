@@ -167,25 +167,26 @@ with open('temp.txt', 'w') as f:
 
 # 5. 自定义函数
 
-函数
+函数：位置参数必须在关键字参数之前，关键字参数可以设置缺省值
 
 
 ```python
-def func(limit):
-    return list(range(limit))
+# /之前的参数只能是位置参数，*之后的参数只能是关键字参数
+def func(a, b, /, c, d, *, e, f):
+    pass
+
+# *pargs是可变长位置参数，**kargs是可变长关键字参数
+def func(arg, *pargs, **kargs):
+    pass
 
 f = lambda x: x**2
 
-# 函数参数
-def func1(arg, *pargs, **kargs):
-    pass
-
 # 函数修饰
 @decorate
-def func2():
+def func():
     pass
 # 等价于
-func3 = decorate(func2)
+func = decorate(func)
 ```
 
 生成器
