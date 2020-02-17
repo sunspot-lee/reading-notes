@@ -1,4 +1,4 @@
-# 1. ripgrep
+# ripgrep
 ver 11.0.0
 
 USAGE:
@@ -20,7 +20,6 @@ USAGE:
 * -F 把PATTERN看做普通字符串而不是正则表达式
 * -w 整词匹配，-x 整行匹配
 * -U 多行匹配，可以使用\n
-* --trim 忽略行首空格
 
 * -v 显示不匹配PATTERN的行
 * -l 只显示包含匹配的文件，--files-without-match 只显示不包含匹配的文件

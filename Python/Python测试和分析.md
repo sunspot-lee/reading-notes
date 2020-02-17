@@ -1,10 +1,3 @@
----
-tags: [Python]
-title: Python测试和分析
-created: '2019-10-28T01:10:04.430Z'
-modified: '2019-10-28T01:10:26.483Z'
----
-
 # 1. 测试
 ## 1.1. pytest
 * 安装pytest
