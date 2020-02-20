@@ -125,6 +125,7 @@ modified: '2019-10-28T01:09:36.631Z'
 
 
 序列$x[n]$的Fourier变换为
+
 $$
 X(e^{j\omega}) = \sum_{n=-\infty}^{+\infty} x[n] e^{-j\omega n}
 $$

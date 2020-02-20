@@ -1,29 +1,26 @@
----
-tags: [数学]
-title: 'Probability, random variables, and stochastic processes'
-created: '2020-01-04T01:41:15.885Z'
-modified: '2020-01-04T01:41:18.436Z'
----
-
 # Probability, random variables, and stochastic processes
 
-## 常用随机变量
+## 随机过程
 
-### 正态分布
+### 9. 一般概念
 
-PDF
-$$
-f(x)=N(\mu,\sigma^2)=\frac1{\sqrt{2\pi\sigma^2}} e^{-(x-\mu)^2/2\sigma^2}
-$$
-当N趋于无穷时，N个独立同分布随机变量的平均值服从正态分布
-
-### 指数分布
-
-PDF
-$$
-f(x)=\begin{cases}\lambda e^{-\lambda x} & x \ge 0 \\0 & \text{else}\end{cases}
-$$
-CDF
-$$
-F(x)=1-e^{-\lambda x}
-$$
+* 随机变量x：一种赋予实验S的每个结果$\xi$一个**数**$x(\xi)$的规则
+* 随机过程x(t)：一种赋予实验S的每个结果$\xi$一个**函数**$x(t,\xi)$的规则
+* 随机过程**处处相等**：两个随机过程x(t)和y(t)，对每一个$\xi$，$x(t,\xi)-y(t,\xi)=0$
+* 随机过程**均方相等**：两个随机过程x(t)和y(t)，对每一个t，$E\{|x(t)-y(t)|^2\}=0$
+* 随机过程x(t)的**一阶分布函数**：$F(x,t)=P\{x(t)\le x\}$
+* 随机过程x(t)的**二阶分布函数**：$F(x_1,x_2;t_1,t_2)=P\{x(t_1)\le x_1,x(t_2)\le x_2\}$
+* 随机过程x(t)的**一阶密度函数**：$f(x,t)=\frac{\partial F(x,t)}{\partial x}$
+* 随机过程x(t)的**二阶密度函数**：$f(x_1,x_2;t_1,t_2)=\frac{\partial^2 F(x_1,x_2;t_1,t_2)}{\partial x_1 \partial x_2}$
+* 随机过程x(t)的**均值**：$\eta(t)=E\{x(t)\}=\int_{-\infty}^\infty x f(x,t)\,dx$
+* 随机过程x(t)的**自相关函数**：$R(t_1,t_2)=E\{x(t_1)x^*(t_2)\}$
+* 随机过程x(t)的**自协方差**：$C(t_1,t_2)=R(t_1,t_2)-\eta(t_1)\eta^*(t_2)$
+    * 自协方差是中心化过程$x'(t)=x(t)-\eta(t)$的自相关函数
+* 随机过程x(t)的**相关系数**：$r(t_1,t_2)=\frac{C(t_1,t_2)}{\sqrt{C(t_1,t_1)C(t_2,t_2)}}$
+    * 相关系数是归一化过程$x'(t)=x(t)/\sqrt{C(t,t)}$的自协方差
+    * $|r(t_1,t_2)|\le 1$
+    * $r(t,t)=1$
+* 随机过程x(t)和y(t)的**互相关函数**：$R_{xy}(t_1,t_2)=E\{x(t_1)y^*(t_2)\}=R^*_{yx}(t_2,t_1)$
+* 随机过程x(t)和y(t)的**互协方差**：$C_{xy}(t_1,t_2)=R_{xy}(t_1,t_2)-\eta_x(t_1)\eta^*_y(t_2)$
+* 随机过程x(t)和y(t)是**互相正交的**：如果对于每个$t_1$和$t_2$，$R_{xy}(t_1,t_2)=0$
+* 随机过程x(t)和y(t)是**不相关的**：如果对于每个$t_1$和$t_2$，$C_{xy}(t_1,t_2)=0$
