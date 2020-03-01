@@ -1,10 +1,3 @@
----
-tags: [信号处理]
-title: Classic Books
-created: '2020-01-06T14:04:29.887Z'
-modified: '2020-01-06T14:09:28.780Z'
----
-
 经典信号与系统、信号处理书籍简介
 
 1. 《Linear Systems and Signals》——B.P.Lathi 

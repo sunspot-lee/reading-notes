@@ -1,10 +1,3 @@
----
-tags: [Python]
-title: IPython
-created: '2019-11-21T02:19:37.954Z'
-modified: '2019-11-21T03:26:17.250Z'
----
-
 # IPython
 
 `%reset` 删除所有用户定义的名字

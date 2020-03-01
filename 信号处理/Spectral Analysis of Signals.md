@@ -1,10 +1,3 @@
----
-tags: [信号处理]
-title: Spectral Analysis of Signals
-created: '2020-01-06T14:04:15.221Z'
-modified: '2020-01-06T14:09:28.854Z'
----
-
 # Spectral Analysis of Signals
 
 现代信号谱分析

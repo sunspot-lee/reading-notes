@@ -1,10 +1,3 @@
----
-tags: [Python]
-title: Python调试
-created: '2019-10-28T01:10:04.435Z'
-modified: '2019-10-28T01:10:26.489Z'
----
-
 # 1. ipdb
 * 在命令行上执行`ipdb3 xxx.py`
 # 2. ipython

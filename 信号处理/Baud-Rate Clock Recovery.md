@@ -1,10 +1,3 @@
----
-tags: [通信]
-title: Baud-Rate Clock Recovery
-created: '2018-12-29T06:39:57.066Z'
-modified: '2019-10-28T01:13:21.860Z'
----
-
 ## 0 准备
 
 假设$A_m$是数据符号，$h(t)$是信道冲击响应，收到的信号可表示为：

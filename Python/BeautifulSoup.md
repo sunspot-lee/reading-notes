@@ -1,10 +1,3 @@
----
-tags: [Python]
-title: BeautifulSoup
-created: '2019-10-28T01:10:04.425Z'
-modified: '2019-10-28T01:10:26.466Z'
----
-
 # 1. BeautifulSoup
 
 ``` python

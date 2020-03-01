@@ -1,10 +1,3 @@
----
-tags: [信号处理]
-title: Signals and Systems
-created: '2018-12-29T06:42:09.825Z'
-modified: '2020-01-06T14:11:44.517Z'
----
-
 ## 一阶连续时间系统
 ### 微分方程形式
 

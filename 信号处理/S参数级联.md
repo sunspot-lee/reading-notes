@@ -1,10 +1,3 @@
----
-tags: [通信/导线]
-title: S参数级联
-created: '2018-12-29T00:53:49.636Z'
-modified: '2020-01-07T00:58:08.337Z'
----
-
 # S参数级联
 
 ## 把 Single-Ended 4-Port S参数转换为 2-Port 差分S参数

@@ -1,10 +1,3 @@
----
-tags: [Python]
-title: NumPy
-created: '2019-10-28T01:10:04.427Z'
-modified: '2019-10-28T01:10:26.475Z'
----
-
 # 文档
 
 `np.info(obj)` 看文档

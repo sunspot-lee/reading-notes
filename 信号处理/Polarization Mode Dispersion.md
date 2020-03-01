@@ -1,10 +1,3 @@
----
-tags: [通信]
-title: Polarization Mode Dispersion
-created: '2018-12-29T06:40:26.141Z'
-modified: '2019-10-28T01:13:21.875Z'
----
-
 1. PMD现象源于光纤中不同位置的双折射效应的随机变化。
 
 2. 光的极化态可以用2D Jones矢量描述

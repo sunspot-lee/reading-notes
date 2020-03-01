@@ -1,10 +1,3 @@
----
-tags: [Python]
-title: Python数据存盘
-created: '2019-10-28T01:10:04.432Z'
-modified: '2019-10-28T01:10:26.497Z'
----
-
 # 1. pickle 推荐
 ```python
 import pickle

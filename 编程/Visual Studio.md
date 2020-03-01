@@ -1,10 +1,3 @@
----
-tags: [编程]
-title: Visual Studio
-created: '2020-01-06T14:04:09.988Z'
-modified: '2020-01-06T14:09:43.299Z'
----
-
 * 跳到定义：F12。返回：Ctrl + -
 * 预览定义：Alt + F12
 * 增量搜索：Ctrl + I

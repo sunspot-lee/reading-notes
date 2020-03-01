@@ -1,10 +1,3 @@
----
-tags: [通信]
-title: MIMO
-created: '2018-12-29T02:56:09.599Z'
-modified: '2019-10-28T01:13:21.865Z'
----
-
 # 1. MIMO
 Introduction to MIMO Communications (Hampton 2013) 读完第1章
 

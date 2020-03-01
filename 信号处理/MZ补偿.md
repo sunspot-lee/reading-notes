@@ -1,10 +1,3 @@
----
-tags: [通信]
-title: MZ补偿
-created: '2018-12-29T00:53:49.623Z'
-modified: '2019-10-28T01:13:21.870Z'
----
-
 MZ调制器的输出信号$I_{mz}$ 和$Q_{mz}$ 为：
 $$
 \begin{align}

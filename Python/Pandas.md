@@ -1,10 +1,3 @@
----
-tags: [Python]
-title: Pandas
-created: '2019-11-11T02:19:35.858Z'
-modified: '2019-11-21T07:28:51.952Z'
----
-
 # Pandas
 
 ## Series
