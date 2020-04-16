@@ -111,38 +111,28 @@ Vim为Python提供了一个vim模块，模块中定义了：
 * tabpages
 * current
 
-## 插件Fugitive：执行Git命令
-
-## 插件Signify：处理Hunk对象(c)
+## 插件GitGutter：处理Hunk对象(c)
 
 `]c` Next hunk
-
 `[c` Previous hunk
+`:GitGutterQuickFix`
+`:GitGutterFold`
 
-`]C` Last hunk
+`<leader>hp` Preview hunk
+`<leader>hs` Stage hunk
+`<leader>hu` Undo hunk
 
-`[C` First hunk
+## 插件Gundo：Undo树
 
-`:SignifyDiff` 在一个新Tab中比较当前文件与VCS的不同
-
-`:SignifyFold` 在一个新Tab中打开当前文件并折叠没修改的部分
-
-`:SignifyHunkDiff` 显示当前行的变化
-
-`:SignifyHunkUndo` Undo当前行的变化
+`:GundoToggle` 开关undo树
 
 ## 插件LeaderF：模糊搜索
 
 `:Leaderf {subcmd}` 执行LeaderF的子命令：file、tag、function、mru、searchHistory、cmdHistory、help、line、colorscheme、gtags、self、bufTag、buffer、rg
-
 `<leader>f` 搜索文件
-
 `<leader>b` 搜索buffer
 
-`<leader>m` 搜索mru
-
 LeaderF被启动后
-
 * `<ctrl>r` fuzzy search和regex之间切换
 * `<ctrl>f` full path和name only之间切换
 * `<tab>` normal模式
@@ -154,10 +144,6 @@ LeaderF被启动后
 
 ## 插件ListToggle：开关QuickFix窗口和Location窗口
 
-`<leader>q` 开关quick-fix窗口
-
-`<leader>l` 开关location窗口
-
 ## 插件EasyMotion：快速移动
 
 `<leader><leader>{cmd}`
@@ -166,30 +152,45 @@ LeaderF被启动后
 
 ## 插件NERDCommenter：注释
 
-`<leader>c<space>` 开关注释
+`<leader>ci` 开关注释
+
+## 插件Switch：切换True/False
+
+`gs` 切换
 
 ## 插件Surround：编辑成对tag
 
 `ds<tag>` 删除
-
 `cs<tag1><tag2>` 修改
-
 `ys<object|motion><tag>` 增加
-
 `S<tag>` visual模式下的增加
 
-## 插件LineDiff：比较
+## 插件Multiple-Cursors：多重光标
 
 ## 插件Jedi：Python
 
 `<leader>d` 跳转到定义或赋值
-
-`<leader>g` 跳转到赋值
-
-`<leader>s` 跳转到stub
-
 `K` 文档
-
 `<leader>r` 改名
-
 `<leader>n` 搜索引用
+
+## 插件AsyncRun：异步运行
+
+## 插件LineDiff：比较
+
+## Tips
+* 插入模式
+    * `<C-D>` `<C-T>` 增减缩进
+    * `<C-K> {char1} {char2}` 输入digraph
+    * `<C-N>` `<C-P>` 关键字补全
+    * `<C-R> {register}` 插入寄存器内容
+    * `<C-W>` 删除左边一个词
+    * `<C-]>` 展开缩写
+* 普通模式
+    * `N<C-A>` `N<C-X>` 光标下的数字加减N
+    * `<C-I>` `<C-O>` 在jump list中进退
+    * `<C-R>` Redo
+    * `<C-T>` 在tag list中进退
+    * `<C-]>` tag跳转
+    * `<C-V>` 进入块可视模式
+    * `(` `)` 前/后句子

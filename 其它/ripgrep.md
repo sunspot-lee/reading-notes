@@ -1,5 +1,5 @@
 # ripgrep
-ver 11.0.0
+ver 12.0.0
 
 USAGE:
 
@@ -27,4 +27,4 @@ USAGE:
 
 * -r <REPLACEMENT_TEXT> 替换
 
-正则表达式语法：[Regular Expression](https://docs.rs/regex/1.1.7/regex/#syntax)
+正则表达式语法：[Regular Expression](https://docs.rs/regex/1.3.5/regex/#syntax)

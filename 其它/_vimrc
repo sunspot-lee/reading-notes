@@ -17,6 +17,7 @@ set number " local
 set hlsearch
 set cursorline " window
 " 10
+set guioptions-=T
 set guifont=Consolas:h12
 set guifontwide=KaiTi:h12
 set renderoptions=type:directx
@@ -41,6 +42,7 @@ set autowrite
 set autoread " buffer
 " 20
 set directory=$TEMP
+set updatetime=1000
 " 21
 set wildmenu
 " 23
@@ -51,48 +53,64 @@ set ambiwidth=double
 " 27
 set virtualedit=block
 
+
 filetype off
 
 call plug#begin('~/vimfiles/plugged')
 
-Plug 'mhinz/vim-signify'
-nmap <leader>v :SignifyHunkDiff<CR>
-nmap <leader>u :SignifyHunkUndo<CR>
+Plug 'airblade/vim-gitgutter'
+let g:gitgutter_preview_win_floating = 1
+let g:gitgutter_map_keys = 0
+nmap [c <Plug>(GitGutterPrevHunk)
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap <leader>z :GitGutterFold<CR>
+nmap <leader>v <Plug>(GitGutterPreviewHunk)
+nmap <leader>w <Plug>(GitGutterStageHunk)
+nmap <leader>u <Plug>(GitGutterUndoHunk)
 
 Plug 'Yggdroot/LeaderF'
-let g:Lf_WildIgnore = { 'dir': ['.*'], 'file': [] }
-let g:Lf_Gtagsconf = 'd:/Tools/Global/share/gtags/gtags.conf'
+let g:Lf_WindowPosition = 'popup'
 let g:Lf_Gtagslabel = 'native-pygments'
 let g:Lf_GtagsAutoGenerate = 1
-nmap <leader>m :LeaderfMru<CR>
-map <F2> :LeaderfFunction<CR>
-map <F3> :LeaderfRgInteractive<CR><C-R><C-W>
-map <F4> :Leaderf gtags --by-context<CR>
+nmap <C-P> :LeaderfMru<CR>
+nmap <C-G> :Leaderf gtags<CR>
+nmap <F4> :Leaderf gtags --by-context --auto-jump<CR>
+nmap <F3> <Plug>LeaderfRgCwordLiteralBoundary
+vmap <F3> <Plug>LeaderfRgVisualLiteralNoBoundary
+map <C-F3> :Leaderf --recall<CR>
 
 Plug 'valloric/listtoggle'
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
-nmap <A-Up> :cprevious<CR>
-nmap <A-Down> :cnext<CR>
 
 Plug 'easymotion/vim-easymotion'
-nmap s         <Plug>(easymotion-s2)
-nmap <Leader>s <Plug>(easymotion-sn)
-"<Plug>(easymotion-jumptoanywhere)
+nmap s <Plug>(easymotion-s2)
 
 Plug 'tpope/vim-repeat'
 
 Plug 'scrooloose/nerdcommenter'
 let NERDMenuMode = 0
+let NERDCreateDefaultMappings = 0
+nmap <Tab> <Plug>NERDCommenterInvert
+vmap <Tab> <Plug>NERDCommenterInvert
+
+Plug 'andrewradev/switch.vim'
 
 Plug 'tpope/vim-surround'
 
-Plug 'andrewradev/linediff.vim'
+Plug 'terryma/vim-multiple-cursors'
+let g:multi_cursor_prev_key = '<C-M>'
 
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-let g:jedi#completions_command = "<C-N>"
+let g:jedi#completions_command = '<C-X>'
 let g:jedi#popup_on_dot = 0
 let g:jedi#show_call_signatures = 2
+
+Plug 'skywind3000/asyncrun.vim'
+let g:asyncrun_mode = 'term'
+let g:asyncrun_save = 1
+
+Plug 'andrewradev/linediff.vim'
 
 call plug#end()
 
@@ -111,34 +129,35 @@ nmap j gj
 nmap k gk
 
 " for windows
-nmap <C-H> <C-W>h
-nmap <C-J> <C-W>j
-nmap <C-K> <C-W>k
-nmap <C-L> <C-W>l
-tmap <C-h> <C-w>h
-tmap <C-j> <C-w>j
-tmap <C-k> <C-w>k
-tmap <C-l> <C-w>l
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+tnoremap <C-H> <C-W>h
+tnoremap <C-J> <C-W>j
+tnoremap <C-K> <C-W>k
+tnoremap <C-L> <C-W>l
 
 " for 输入法
 set imactivatekey=C-space
 imap <ESC> <ESC>:set iminsert=2<CR>
 
 " 搜索选中字符串
-vmap * y/\V\<<C-R>=escape(@",'/\')<CR>\><CR>
+vmap * y/\V<C-R>=escape(@",'/\')<CR><CR>
+vmap # y?\V<C-R>=escape(@",'/\')<CR><CR>
 
 autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
 
-command -nargs=* Pylint compiler pylint | make -d C <args> %
+command -nargs=* Pylint compiler pylint | make -d C,too-many-statements,too-many-locals <args> %
 command -nargs=* Python compiler python | make % <args>
 
 augroup Python
 	autocmd!
-	autocmd FileType python setlocal nowrap
 	autocmd FileType python setlocal foldmethod=indent
-	autocmd FileType python map <F5> :Python<CR>
-	autocmd FileType python map <S-F5> :!ipython --pdb %<CR>
+	autocmd FileType python map <F5> :AsyncRun -pos=external python %<CR>
+	autocmd FileType python map <S-F5> :AsyncRun -pos=external ipython --pdb %<CR>
+	autocmd FileType python nmap <F9> Obreakpoint()<Esc>
 augroup END
